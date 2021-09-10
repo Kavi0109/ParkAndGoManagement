@@ -50,7 +50,6 @@ function Insertparking(){
 
     /*function changeImage(e){
         e.preventDefault(e);
-
         if(sno === sno) {
             return ()=>setImage(image);
         }
