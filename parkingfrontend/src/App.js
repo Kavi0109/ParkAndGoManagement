@@ -17,7 +17,6 @@ import Aboutus from './components/aboutus.js';
 import Contactus from './components/contactus.js';
 import Gallery from './components/gallery.js';
 import Ourprojects from './components/ourprojects';
-import Login from './components/body/auth/Login';
 import {useDispatch, useSelector} from 'react-redux'
 import {dispatchLogin, fetchUser, dispatchGetUser} from './redux/actions/authAction'
 import Header from './components/header/Header'
@@ -58,6 +57,7 @@ function App() {
       <Menu/>
       <Slider/>
       <Menubar/>
+      <Header/>
       <Body/>
       <Route path="/aboutus" exact component={Aboutus}/>
       <Route path="/contactus" exact component={Contactus}/>

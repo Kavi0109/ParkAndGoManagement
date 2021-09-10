@@ -11,7 +11,7 @@ export default class showparking extends Component{
 
 
     componentDidMount(){
-        axios.get("http://localhost:8070/parking/").then(response=>{
+        axios.get("/parking/").then(response=>{
             this.setState({parking : response.data});
         })
         .catch(function(error){

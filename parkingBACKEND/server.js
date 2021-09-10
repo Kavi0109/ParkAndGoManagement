@@ -16,34 +16,26 @@ app.use(fileUpload({
     useTempFiles: true
 }))
 
-const PORT = process.env.PORT || 5000;
-
-app.use(cors());
-app.use(express.json());
+const PORT = process.env.PORT || 8070;
 app.use(express.urlencoded({
     extended: true
   }));
 //app.use(bodyParser.json());
 
-const URL = process.env.MONGODB_URL;
-
-
-mongoose.connect(URL,{
-    useCreateIndex:true,
+const URI = process.env.MONGODB_URL
+mongoose.connect(URI, {
+    //useCreateIndex: true,
+    //useFindAndModify: false,
     useNewUrlParser: true,
-    useUnifiedTopologyL: true,
-    useFindAndModify: false,
-});
-
-const connection = mongoose.connection;
-connection.once("open", () => {
-    console.log("Mongodb Connection Success!")
+    useUnifiedTopology: true
+}, err => {
+    if(err) throw err;
+    console.log("Connected to mongodb")
 })
 
 const parkingRouter = require("./routes/parking.js");
-app.use('/user', require('./routes/userRouter'))
-app.use('/api', require('./routes/upload'))
-
+app.use("/user", require("./routes/userRouter"))
+app.use("/api", require("./routes/upload"))
 app.use("/parking",parkingRouter);
 
 app.listen(PORT, () => {

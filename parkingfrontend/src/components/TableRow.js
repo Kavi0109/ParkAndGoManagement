@@ -10,7 +10,7 @@ class TableRow extends Component {
     }
 
     deleteParking() {
-        axios.delete('http://localhost:8070/parking/delete/' + this.props.obj._id)
+        axios.delete('/parking/delete/' + this.props.obj._id)
             .then((res) => {
                 alert("Parking Slot Successfully Deleted!!")
                 console.log('Parking successfully deleted!')
