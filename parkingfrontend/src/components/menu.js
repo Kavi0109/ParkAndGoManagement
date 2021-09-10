@@ -44,7 +44,7 @@ function menu(){
                 <Link to="/projects" className="navbar-brand">Our Projects</Link>
                 </div>
                 <div className="container">
-                <Link to="" className="navbar-brand">Login</Link>
+                <Link to="/login" className="navbar-brand">Login</Link>
                 </div>
             </nav>
         </div>
