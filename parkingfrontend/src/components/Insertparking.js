@@ -31,7 +31,7 @@ function Insertparking(){
             dt
         }
 
-        axios.post("/parking/add",insertParking).then(()=>{
+        axios.post("/parking/addp",insertParking).then(()=>{
             alert("Parking Slot Successfully Added!!")
             /*setSelectedOption("");
             setSlot_no("");

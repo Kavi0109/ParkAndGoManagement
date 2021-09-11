@@ -38,6 +38,13 @@ app.use("/user", require("./routes/userRouter"))
 app.use("/api", require("./routes/upload"))
 app.use("/parking",parkingRouter);
 
+const salaryRouter = require("./routes/salaries.js");
+const leaveRouter = require("./routes/leaves.js");
+
+app.use("/salary",salaryRouter);
+app.use("/leave",leaveRouter);
+
+
 app.listen(PORT, () => {
     console.log('Server is up and running on port number: %d',PORT)
 })

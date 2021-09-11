@@ -20,10 +20,10 @@ function menu2(){
         <Link to="" className="navbar-brand">GPS Tracker</Link>
         </div>
         <div className="container">
-        <Link to="" className="navbar-brand">Customer Feedbacks</Link>
+        <Link to="" className="navbar-brand">Manage Employees</Link>
         </div>
         <div className="container">
-        <Link to="" className="navbar-brand">Suggestions</Link>
+        <Link to="/home" className="navbar-brand">Manage Salary</Link>
         </div>
         </nav>
         </div>

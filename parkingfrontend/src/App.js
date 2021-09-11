@@ -22,6 +22,16 @@ import {dispatchLogin, fetchUser, dispatchGetUser} from './redux/actions/authAct
 import Header from './components/header/Header'
 import Body from './components/body/Body'
 import axios from 'axios'
+import AllLeaves from './components/AllLeaves';
+import AddLeave from './components/AddLeave';
+import UpdateSalary from './components/UpdateSalary'
+import Home from './components/Home';
+import AddSalary from './components/AddSalary';
+import AllSalaries from './components/AllSalaries';
+import CounterClass from './components/CounterClass';
+import CounterFunction from './components/CounterFunction';
+import Header1 from './components/Header';
+import Payslip from './components/Payslip';
 
 function App() {
   const dispatch = useDispatch()
@@ -64,13 +74,21 @@ function App() {
       <Route path="/gallery" exact component={Gallery}/>
       <Route path="/projects" exact component={Ourprojects}/>
       <Route path="/show" exact component={Tableintro}/>
-      <Route path="/add" exact component={Insertparking}/>
+      <Route path="/addp" exact component={Insertparking}/>
       <Route path="/first" exact component={Slottablefirst}/>
       <Route path="/second" exact component={Slottablesecond}/>
       <Route path="/basement" exact component={Slottablebasement}/>
       <Route path="/outer" exact component={Slottableouter}/>
       <Route path="/retrieve" exact component={showParking}/>
       <Route path="/get/:id" exact component={updateparking}/>
+      <Route path="/bet/:id" component={Payslip} /> 
+        <Route exact path="/l" component = {AllLeaves} />
+        <Route exact path="/addl" component={AddLeave} />
+        <Route exact path="/get/:id" component={UpdateSalary} />
+        <Route path ="/home"  exact component ={Home}/>
+       {/* <Route path="/get/:id" exact component = {GetSalary}/> */}
+        <Route exact path="/" component = {AllSalaries} />
+        <Route exact path="/add" component={AddSalary} />
       <Footer/>
     </div>
     </Router>

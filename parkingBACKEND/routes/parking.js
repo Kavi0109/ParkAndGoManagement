@@ -3,7 +3,7 @@ let Parking = require("../models/Parking");
 
 //adding parking details
 
-router.route("/add").post((req,res)=>{
+router.route("/addp").post((req,res)=>{
 
     const Option =req.body.Option;
     const sno = Number(req.body.sno);
