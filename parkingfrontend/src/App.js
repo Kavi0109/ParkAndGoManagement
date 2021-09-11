@@ -80,7 +80,7 @@ function App() {
       <Route path="/basement" exact component={Slottablebasement}/>
       <Route path="/outer" exact component={Slottableouter}/>
       <Route path="/retrieve" exact component={showParking}/>
-      <Route path="/get/:id" exact component={updateparking}/>
+      <Route path="/getp/:id" exact component={updateparking}/>
       <Route path="/bet/:id" component={Payslip} /> 
         <Route exact path="/l" component = {AllLeaves} />
         <Route exact path="/addl" component={AddLeave} />

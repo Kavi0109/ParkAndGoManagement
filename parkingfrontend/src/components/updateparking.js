@@ -27,7 +27,7 @@ export default class updateparking extends Component{
     }
 
     componentDidMount(){
-        axios.get('/parking/get/' + this.props.match.params.id)
+        axios.get('/parking/getp/' + this.props.match.params.id)
         .then(response=>{
             this.setState({
                 Option: response.data.Option,

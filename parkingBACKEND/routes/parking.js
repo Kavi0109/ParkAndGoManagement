@@ -85,7 +85,7 @@ router.route("/delete/:id").delete((req,res,next)=>{
 })
 
 //get details from only one user
-router.route("/get/:id").get((req,res)=>{
+router.route("/getp/:id").get((req,res)=>{
      Parking.findById(req.params.id,(error,data)=>{
         if(error){
             return next(error)
