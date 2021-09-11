@@ -11,7 +11,7 @@ function menu2(){
         <Link to="/show" className="navbar-brand">Allot Parking</Link>
         </div>
         <div className="container">
-        <Link to="" className="navbar-brand">Bookings</Link>
+        <Link to="/homeRishma" className="navbar-brand">Bookings</Link>
         </div>
         <div className="container">
         <Link to="" className="navbar-brand">Shuttle Routes</Link>

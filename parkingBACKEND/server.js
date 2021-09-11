@@ -26,8 +26,8 @@ const URI = process.env.MONGODB_URL
 mongoose.connect(URI, {
     //useCreateIndex: true,
     //useFindAndModify: false,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+    //useNewUrlParser: true,
+    //useUnifiedTopology: true
 }, err => {
     if(err) throw err;
     console.log("Connected to mongodb")
@@ -43,6 +43,13 @@ const leaveRouter = require("./routes/leaves.js");
 
 app.use("/salary",salaryRouter);
 app.use("/leave",leaveRouter);
+
+//access the booking.js
+const bookingRouter = require("./routes/booking.js");
+
+
+//excute the booking.js in the routes folder
+app.use("/booking",bookingRouter);
 
 
 app.listen(PORT, () => {

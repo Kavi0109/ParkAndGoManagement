@@ -32,6 +32,11 @@ import CounterClass from './components/CounterClass';
 import CounterFunction from './components/CounterFunction';
 import Header1 from './components/Header';
 import Payslip from './components/Payslip';
+import BookingForm from './components/BookingForm.js';
+import Allbookings from './components/Allbookings';
+import HeaderRishma from './components/HeaderRishma';
+import HomeR from './components/HomeRishma';
+import UpdateBooking from './components/UpdateBooking';
 
 function App() {
   const dispatch = useDispatch()
@@ -89,6 +94,11 @@ function App() {
        {/* <Route path="/get/:id" exact component = {GetSalary}/> */}
         <Route exact path="/" component = {AllSalaries} />
         <Route exact path="/add" component={AddSalary} />
+
+        <Route path="/homeRishma" exact component = {HomeR}/>
+          <Route path="/addRishma" exact component = {BookingForm}/>
+          <Route path="/allBooking" exact component = {Allbookings}/>
+          <Router path="/edit-booking/:id" exact component ={UpdateBooking}/>
       <Footer/>
     </div>
     </Router>

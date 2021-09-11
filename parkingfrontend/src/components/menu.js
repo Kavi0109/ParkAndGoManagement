@@ -20,7 +20,8 @@ function menu(){
             <img src={logo} style={logosize}></img>
             <div className="container">    
              <h3 class="text-white">Park And Go Management System<br></br><h6 class="text-white">A complete solution for managing car parking slots and parking areas.</h6></h3><br></br>     
-             </div>  
+             </div> 
+              
              </div>      
             </nav>
             
