@@ -2,6 +2,7 @@ const router = require("express").Router();
 let Parking = require("../models/Parking");
 
 //adding parking details
+
 router.route("/add").post((req,res)=>{
 
     const Option =req.body.Option;

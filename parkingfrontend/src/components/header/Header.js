@@ -37,7 +37,7 @@ function Header () {
     return (
         <header>
             <div className="logo">
-                <h1><Link to = '/'> ParkExpress </Link></h1>
+                <h1><Link to = '/'> </Link></h1>
             </div>
 
             <ul style={transForm}>

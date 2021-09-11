@@ -46,7 +46,7 @@ function Register () {
             
         try {
          
-            const res = await axios.post('./user/register',{
+            const res = await axios.post('/user/register',{
                 firstName, lastName, email, telephone, password
             })
 

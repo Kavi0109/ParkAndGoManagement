@@ -27,7 +27,7 @@ export default class updateparking extends Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:8070/parking/get/' + this.props.match.params.id)
+        axios.get('/parking/get/' + this.props.match.params.id)
         .then(response=>{
             this.setState({
                 Option: response.data.Option,
@@ -98,7 +98,7 @@ export default class updateparking extends Component{
             des: this.state.des
         };
 
-        axios.put('http://localhost:8070/parking/update/' + this.props.match.params.id, obj)
+        axios.put('/parking/update/' + this.props.match.params.id, obj)
         .then((response)=>{
             alert("Parking Slot Successfully Updated!!")
             console.log(response.data)

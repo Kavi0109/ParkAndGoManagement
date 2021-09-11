@@ -6,8 +6,6 @@ import {showErrMsg, showSuccessMsg} from '../../utils/notifications/Notification
 import {isLength, isMatch} from '../../utils/validation/Validation'
 import {fetchAllUsers, dispatchGetAllUsers} from '../../../redux/actions/usersAction'
 
-
-
 const initialState = {
     firstName : '',
     lastName : '',
@@ -16,6 +14,7 @@ const initialState = {
     err :'',
     success : ''
 }
+
 function Profile() {
 
     const auth = useSelector(state => state.auth)
@@ -27,6 +26,7 @@ function Profile() {
     const{user, isAdmin} = auth
 
     const [data, setData] = useState(initialState)
+
     const {firstName, lastName, password, cf_password, err, success} = data
     const [avatar, setAvatar] = useState(false) 
     const [loading, setLoading] = useState(false)

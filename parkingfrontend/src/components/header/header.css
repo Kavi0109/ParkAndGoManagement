@@ -1,18 +1,20 @@
 header{
     width: 100%;
-    min-height: 100px;
-    background: #282c34;
+    min-height: 50px;
+    background: #2982e1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 0 30px;
-    margin-top: 100px;
+    margin-top: 0px;
+    margin-bottom: 130px;
 }
 header a{
-    color: white;
+    color: rgb(15, 12, 12);
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    font-size:x-large;
 }
 header ul li{
     display: inline-block;
@@ -41,9 +43,9 @@ header ul li img{
 }
 .drop-nav .dropdown{
     position: absolute;
-    background: #282c34;
+    background: #3e93ed;
     width: 100%;
-    width: calc(100% + 30px);
+    width: calc(100%+50px);
     top: 50px;
     display: none;
 }
