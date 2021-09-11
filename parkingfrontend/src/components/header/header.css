@@ -1,8 +1,8 @@
 header{
     width: 100%;
-    min-height: 50px;
+    min-height: 60px;
     background: #2982e1;
-    display: flex;
+    /*display: flex;*/
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
@@ -26,8 +26,8 @@ header ul li:hover{
 }
 
 header ul li img{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     transform: translateY(10px);
     border-radius: 50%;
 }
@@ -45,7 +45,7 @@ header ul li img{
     position: absolute;
     background: #3e93ed;
     width: 100%;
-    width: calc(100%+50px);
+    width: calc(150%);
     top: 50px;
     display: none;
 }
