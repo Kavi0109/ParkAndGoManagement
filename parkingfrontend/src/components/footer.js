@@ -11,34 +11,95 @@ function footer(){
 
     return(
 
-        <div >
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary" style={{marginTop:20}}>
-         <Link to="" className="navbar-brand">Park Express</Link>
-        </nav><br></br>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <h6>1234 Beautiful St, Colombo, Srilanka.<br></br><br></br>
-                (+94) 011-2578587<br></br><br></br>
-                Wed, 9 AM - 8 PM <br></br><br></br>
-                parkingExpress@gmail.com<br></br><br></br><br></br><br></br><br></br><br></br>
-                parkingExpress all rights reserved.
-            </h6>
-            
+        <div>
+        <footer className="py-5">
+          <div className="container py-xl-4">
+            <div className="row footer-top">
+              <div className="col-lg-4 footer-grid_section_1its footer-text">
+                <h2>
+                  <a className="logo text-wh" href="index.html">
+                    <img src="{Logo}" alt="" className="img-fluid" />
+                    <br />
+                    <span></span> PARK AND GO SYSTEM
+                  </a>
+                </h2>
+              </div>
+              <div className="col-lg-4 footer-grid_section_1its my-lg-0 my-sm-4 my-4">
+                <div className="footer-title">
+                  <h3>Contact Us</h3>
+                </div>
+                <div className="footer-text mt-4">
+                  <p>Address : Negombo-Colombo Main Rd, Seeduwa</p>
+                  <p className="my-2">Phone : +94- 70 700 0005</p>
+                  <p>
+                    Email :{" "}
+                    <a href="mailto:info@example.com">goandpark@gmail.com</a>
+                  </p>
+                </div>
+              </div>
+              <div className="col-lg-4 footer-grid_section_1its">
+                <div className="footer-title">
+                  <h3>Request Info</h3>
+                </div>
+                <div className="info-form-right mt-4 p-0">
+                  <form action="/" method="post">
+                    <div className="row">
+                      <div className="col-lg-6 form-group mb-2 pr-lg-1">
+                        <input
+                          type="text"
+                          className="form-control"
+                          name="Name"
+                          placeholder="Name"
+                          required
+                        />
+                      </div>
+                      <div className="col-lg-6 form-group mb-2 pl-lg-1">
+                        <input
+                          type="text"
+                          className="form-control"
+                          name="Phone"
+                          placeholder="Phone"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="form-group mb-2">
+                      <input
+                        type="email"
+                        className="form-control"
+                        name="Email"
+                        placeholder="Email"
+                        required
+                      />
+                    </div>
+                    <div className="form-group mb-2">
+                      <textarea
+                        name="Comment"
+                        className="form-control"
+                        placeholder="Comment"
+                        required
+                        defaultValue={""}
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="btn submit-contact ml-auto"
+                    >
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <div className="cpy-right text-center py-3">
+          <p>© 2021 PARK AND GO SYSTEM. All rights reserved</p>
         </div>
-        <div class="container">
-            <h6>Our Services<br></br><br></br>
-                Allot Parking<br></br><br></br>
-                Manage Bookings<br></br><br></br>
-                Shuttle Routes<br></br><br></br>
-                GPS Tracker<br></br><br></br>
-                Customer Feedback<br></br><br></br>
-            </h6>
-            
-        </div>
-        <img src={logo}  style={logosize} alt="Logo"></img>
-        </nav>
-        
-        </div>
+        <a href="home" className="move-top text-center">
+          <span className="fa fa-level-up" aria-hidden="true" />
+        </a>
+      </div>
     )
 }
 

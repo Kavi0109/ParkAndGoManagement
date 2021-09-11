@@ -71,7 +71,7 @@ function Tableintro(){
                 </a>
                 </th>
                 <td>
-                    <h5 style={{marginTop:75}}><strong>Second Floor Parking</strong></h5>
+                    <h5 class="tableintro" style={{marginTop:75}}><strong>Second Floor Parking</strong></h5>
                     <p class="text-muted">For Non-regular Customers</p>
                 </td>
                 <td><h5 style={{marginTop:75}}>325</h5></td>

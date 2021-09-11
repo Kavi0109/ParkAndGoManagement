@@ -8,7 +8,7 @@
 
 body {
   font-family: roboto, sans-serif;
-  background-color:#1b7ced;
+  background-color:white;
   /* background-image: url("./car7.jpg"); */
  background-repeat:repeat;
  background-attachment: fixed;
@@ -17,8 +17,7 @@ body {
 }
 
 h5{
-    color: #1b7ced;
-    font-weight: bold;
+    color: black;
 }
 h6{
   color: #1b7ced;
