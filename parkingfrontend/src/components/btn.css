@@ -1,0 +1,94 @@
+
+.Submitbtn{
+    background-color: #008CBA;
+    border: none;
+    width: 100%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+.Updatebtn{
+    background-color: #008CBA;
+    border: none;
+    width: 100px;
+    color: white;
+    padding: 10px 32px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.Deletebtn{
+    background-color: #008CBA;
+    border: none;
+    width: 100px;
+    color: white;
+    padding: 10px 23px ;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.GoBack{
+    background-color: #008CBA;
+    border: none;
+    width: 100%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}
+
+.HomeBookingbtn{
+    background-color: #008CBA;
+    border: none;
+    width: 500px;
+    color: white;
+    padding: 10px 32px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.HomeBookingDetailsbtn{
+    background-color: #008CBA;
+    border: none;
+    width: 500px;
+    color: white;
+    padding: 10px 32px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
