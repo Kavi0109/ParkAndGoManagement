@@ -20,7 +20,7 @@ function menu2(){
         <Link to="" className="navbar-brand">GPS Tracker</Link>
         </div>
         <div className="container">
-        <Link to="" className="navbar-brand">Manage Employees</Link>
+        <Link to="/homeKasuni" className="navbar-brand">Manage Employees</Link>
         </div>
         <div className="container">
         <Link to="/home" className="navbar-brand">Manage Salary</Link>

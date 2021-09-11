@@ -36,7 +36,7 @@ export default class showparking extends Component{
                 <Link to="/show" className="navbar-brand">Allot Parking Spaces</Link>
                 </div>
                 <div className="container">
-                <Link to="/add" className="navbar-brand">Add New Slot</Link>
+                <Link to="/addp" className="navbar-brand">Add New Slot</Link>
                 </div>
                 <div className="container">
                 <Link to="/retrieve" className="navbar-brand">Reports</Link>

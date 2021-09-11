@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import logo from './backimage1.jpg';
 
+
 const logosize={
     width:'30%',
     height:'30%'
@@ -12,7 +13,8 @@ function footer(){
     return(
 
         <div>
-        <footer className="py-5">
+        <hr/>
+         <footer className="py-5">
           <div className="container py-xl-4">
             <div className="row footer-top">
               <div className="col-lg-4 footer-grid_section_1its footer-text">

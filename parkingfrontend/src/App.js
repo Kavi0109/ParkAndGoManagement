@@ -9,7 +9,7 @@ import Slider from './components/slider';
 import Insertparking from './components/Insertparking';
 import showParking from './components/showparking';
 import updateparking from './components/updateparking';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Menu from './components/menu.js';
 import Menubar from './components/menu2';
 import Footer from './components/footer';
@@ -37,6 +37,16 @@ import Allbookings from './components/Allbookings';
 import HeaderRishma from './components/HeaderRishma';
 import HomeR from './components/HomeRishma';
 import UpdateBooking from './components/UpdateBooking';
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import AddEmployee from "./components/Employees/AddEmployee";
+import GetAllEmployee from "./components/Employees/GetAllEmployee";
+import EditEmployeeDetails from "./components/Employees/EditEmployeeDetails";
+import EmployeeHome from "./components/Employees/EmployeeHome";
+import UploadImage from "./components/Employees/UploadImage";
+import HomeMain from './components/HomeMain';
 
 function App() {
   const dispatch = useDispatch()
@@ -67,6 +77,18 @@ function App() {
     }
   },[token, dispatch])
   return (
+    <div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     <Router>
     <div>
       <Menu/>
@@ -74,6 +96,7 @@ function App() {
       <Menubar/>
       <Header/>
       <Body/>
+      <Route path="/HomeMain" exact component={HomeMain}/>
       <Route path="/aboutus" exact component={Aboutus}/>
       <Route path="/contactus" exact component={Contactus}/>
       <Route path="/gallery" exact component={Gallery}/>
@@ -99,9 +122,26 @@ function App() {
           <Route path="/addRishma" exact component = {BookingForm}/>
           <Route path="/allBooking" exact component = {Allbookings}/>
           <Router path="/edit-booking/:id" exact component ={UpdateBooking}/>
+          <Switch>
+          {/* Employee Routes */}
+          <Route path="/homeKasuni" exact component={EmployeeHome} />
+          <Route path="/add-new-employee" exact component={AddEmployee} />
+          <Route path="/get-all-employee" exact component={GetAllEmployee} />
+          <Route
+            path="/upload-employee-image/:id"
+            exact
+            component={UploadImage}
+          />
+          <Route
+            path="/get-emploee-dtails-by-id/:id"
+            exact
+            component={EditEmployeeDetails}
+          />
+        </Switch>
       <Footer/>
     </div>
     </Router>
+    </div>
   );
 }
 

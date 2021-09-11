@@ -30,7 +30,7 @@ function menu(){
             <div className="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div className="container">
-                <Link to="" className="navbar-brand">Home</Link>
+                <Link to="/HomeMain" className="navbar-brand">Home</Link>
                 </div>
                 <div className="container">
                 <Link to="/aboutus" className="navbar-brand">About Us</Link>

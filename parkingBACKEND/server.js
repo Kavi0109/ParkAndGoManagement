@@ -8,6 +8,7 @@ const path = require('path')
 const dotenv = require("dotenv");
 const app = express();
 require("dotenv").config();
+const routes = require("./routers");
 
 app.use(express.json())
 app.use(cors())
@@ -44,12 +45,16 @@ const leaveRouter = require("./routes/leaves.js");
 app.use("/salary",salaryRouter);
 app.use("/leave",leaveRouter);
 
+
 //access the booking.js
 const bookingRouter = require("./routes/booking.js");
 
 
 //excute the booking.js in the routes folder
 app.use("/booking",bookingRouter);
+
+
+app.use("/", routes);
 
 
 app.listen(PORT, () => {
