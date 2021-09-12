@@ -42,7 +42,7 @@ export default class getBooking extends Component {
                
 
                 <td>
-                    <Link className="edit-link" to={"./edit-booking/" + this.props.obj._id}>
+                    <Link to={"/edit-booking/" + this.props.obj._id}>
                         <button className="Updatebtn">Edit</button>
                     </Link>
                 </td>

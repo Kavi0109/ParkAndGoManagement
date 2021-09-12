@@ -47,7 +47,7 @@ export default class Allbookings extends Component {
     return (<div className="table-wrapper">
       <br/>
       <h3>All Booking Details</h3>
-      <br/>
+      
 
       <Table striped bordered hover>
         <thead>

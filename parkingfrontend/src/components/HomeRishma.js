@@ -6,14 +6,10 @@ import park5 from './Images/carpark6.jpg'
 import park7 from './Images/carpark10.jpg'
 import park8 from './Images/carpark11.jpg'
 import park9 from './Images/carpark12.jpg'
-import park10 from './Images/carpark13.jpg'
-import park11 from './Images/carpark15.jpg'
-import park12 from './Images/carpark16.jpg'
-
+import park10 from './Images/carpark19.jpg'
+import park11 from './Images/carpark18.jpg'
+import park12 from './Images/carpark17.jpg'
 import './btn.css'
-
-
-
 import './ResponsiveImageLayout.css'
 
 
@@ -29,7 +25,7 @@ function Home(){
         
 
         <div className ="container">
-            <br/><br/>
+            
             <h1>
                 Parking
             </h1>
@@ -69,20 +65,32 @@ function Home(){
             <div class="card bg-dark text-white">
             <img src={park8} class="d-block" opacity="0.7" width="100%" height="500" alt="..."></img>
             <div class="card-img-overlay">
-                <br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/>
                 <div>
                     <a href="/addRishma">
                         <button className="HomeBookingbtn">Booking Slots</button>
                     </a>
                 </div>
-                <br/><br/>
+                <br/>
                 <div>
                     <a href="/allBooking">
-                        <button className="HomeBookingDetailsbtn">Booking Details</button>
+                        <button className="HomeBookingDetailsbtn">Manage my bookings</button>
+                    </a>
+                </div>
+                <br/>
+                <div>
+                    <a>
+                        <button className="HomeBookingDetailsbtn">Help and FAQ</button>
+                    </a>
+                </div>
+                <br/>
+                <div>
+                    <a>
+                        <button className="HomeBookingDetailsbtn">Privacy policy</button>
                     </a>
                 </div>
 
-                <br/><br/><br/><br/>
+                <br/><br/>
 
                 <div>
                     <p>
@@ -105,125 +113,127 @@ function Home(){
                 
 
                 <div class="row">
-                <h1>Packages</h1>
-                <br/><br/><br/>
-                <div class="column">
-                    <a href="/addRishma">
-                        <img src={park9} class="d-block" width="100%" height="200" alt="..."></img>
-                    </a>
-                    
-                    <br/>
-                    <h4>Economy Parking</h4>
-                    
-                    <p>
-                    8-10 min to terminal
+                    <h1>Packages</h1>
+                    <br/><br/><br/>
+                    <div class="column">
+                        <a href="/addRishma">
+                            <img src={park9} class="d-block" width="100%" height="200" alt="..."></img>
+                        </a>
+                        
+                        <br/>
+                        <h4>Economy Parking</h4>
+                        
+                        <p>
+                        8-10 min to terminal
 
-                    The cost effective way to drive yourself & walk to the terminal.
-                    Secure and monitored.
-                    <br/>    
-                    
-                    </p>
-                    <br/>
+                        The cost effective way to drive yourself & walk to the terminal.
+                        Secure and monitored.
+                        <br/>  
+                        
+                        
+                        </p>
+                        <br/>
 
 
-                    <a href="/addRishma">
-                        <img src={park12} class="d-block" width="100%" height="200" alt="..."></img>
-                    </a>
-                    
+                        <a href="/addRishma">
+                            <img src={park12} class="d-block" width="100%" height="200" alt="..."></img>
+                        </a>
+                        
+                        <br/> 
+                        <h4>Executive Parking</h4>
+                        
+                        <p>
+                        2-5 min to terminal
+
+                        Covered and uncovered parking building.
+                        
+                        <br/>    
+                        
+                        </p>  
+                        <br/>
+                    </div>
                     <br/> 
-                    <h4>Executive Parking</h4>
-                    
-                    <p>
-                    2-5 min to terminal
 
-                    Covered and uncovered parking building.
-                    
-                    <br/>    
-                    
-                    </p>  
-                    <br/>
-                </div>
-                <br/> 
+                    <div class="column">
 
-                <div class="column">
-
-                    <a href="/addRishma">
-                        <img src={park3} class="d-block" width="100%" height="200" alt="..."></img>
-                    </a>
-                    <br/>
-                    <h4>Standard Parking</h4>
-                   
-                    <p>
-                    5 mins to terminal
-
-                    Short walk to the domestic terminal.
-                    Over 100 car parks spaces.
-                    Open and easy.
-                    Value for money.
-                    <br/>    
+                        <a href="/addRishma">
+                            <img src={park3} class="d-block" width="100%" height="200" alt="..."></img>
+                        </a>
+                        <br/>
+                        <h4>Standard Parking</h4>
                     
-                    </p> 
-                    <br/>
+                        <p>
+                        5 mins to terminal
 
-                    <a href="/addRishma">
-                        <img src={park11} class="d-block" width="100%" height="200" alt="..."></img>
-                    </a>
-                    <br/>
-                    <h4>Dropoff and Pick up</h4>
-                    
-                    <p>
-                    3-5 min to terminal
+                        Short walk to the domestic terminal.
+                        Over 100 car parks spaces.
+                        Open and easy.
+                        Value for money.
+                        <br/>    
+                        
+                        </p> 
+                        <br/>
 
-                    Plenty of parks within a short walk to the terminal.
-                    Open and easy.
-                    <br/>    
-                    
-                    </p> 
-                    <br/>
-                    
-                </div>
-                <br/> 
-                <div class="column">
+                        <a href="/addRishma">
+                            <img src={park11} class="d-block" width="100%" height="200" alt="..."></img>
+                        </a>
+                        <br/>
+                        <h4>Dropoff and Pick up</h4>
+                        
+                        <p>
+                        3-5 min to terminal
 
-                    <a href="/addRishma">
-                        <img src={park5} class="d-block" width="100%" height="200" alt="..."></img>
-                    </a>
-                    <br/>
-                    <h4>Park & Ride</h4>
-                    
-                    <p>
-                    10-15 min to terminal
+                        Plenty of parks within a short walk to the terminal.
+                        Open and easy.
+                        <br/>    
+                        
+                        </p> 
+                        <br/>
+                        
+                    </div>
+                    <br/> 
+                    <div class="column">
 
-                    Domestic terminal.
-                    Value for money. 
-                    Open and easy.
-                    The ultimate for speed and convenienc.
-                    <br/>    
-                    
-                    </p> 
-                    <br/>
+                        <a href="/addRishma">
+                            <img src={park5} class="d-block" width="100%" height="200" alt="..."></img>
+                        </a>
+                        <br/>
+                        <h4>Park & Ride</h4>
+                        
+                        <p>
+                        10-15 min to terminal
 
-                    <a href="/addRishma">
-                        <img src={park10} class="d-block" width="100%" height="200" alt="..."></img>
-                    </a>
-                    <br/>
-                    <h4>Covered VParking</h4>
-                    
-                    <p>
-                    0-1 min to terminal
+                        Domestic terminal.
+                        Value for money. 
+                        Open and easy.
+                        The ultimate for speed and convenienc.
+                        <br/>    
+                        
+                        </p> 
+                        <br/>
 
-                    Domestic terminal.
-                    The ultimate for speed and convenience.
-                    <br/>    
-                    
-                    </p> 
-                    <br/>
+                        <a href="/addRishma">
+                            <img src={park10} class="d-block" width="100%" height="200" alt="..."></img>
+                        </a>
+                        <br/>
+                        <h4>Covered VParking</h4>
+                        
+                        <p>
+                        0-1 min to terminal
 
-                </div>
+                        Domestic terminal.
+                        The ultimate for speed and convenience.
+                        <br/>    
+                        
+                        </p> 
+                        <br/>
+
+                    </div>
                 
                 </div>
                             
             </div>
+            
 
             
 
