@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import {showErrMsg, showSuccessMsg} from '../../utils/notifications/Notifications'
 import {isLength, isMatch} from '../../utils/validation/Validation'
 import {fetchAllUsers, dispatchGetAllUsers} from '../../../redux/actions/usersAction'
+import Menubar from '../../menu2'
 
 const initialState = {
     firstName : '',
@@ -126,7 +127,10 @@ function Profile() {
         </div>
         <div className="profile_page">
             <div className="col-left">
-                <h2> {isAdmin ? "Admin Profile" : "User Profile" } </h2>
+
+                <Menubar/>
+
+                <h2> {isAdmin ? "Admin Profile": "User Profile" } </h2>
 
                 <div className="avatar"> 
 
@@ -139,8 +143,6 @@ function Profile() {
                         />
                     </span>
                 </div>
-
-                <button> My Bookings </button>
             
                 <div className="form-group">
                     <label htmlFor="firstName"> First Name </label>

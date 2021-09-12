@@ -56,7 +56,6 @@ function App() {
     <div>
       <Menu/>
       <Slider/>
-      <Menubar/>
       <Header/>
       <Body/>
       <Route path="/aboutus" exact component={Aboutus}/>

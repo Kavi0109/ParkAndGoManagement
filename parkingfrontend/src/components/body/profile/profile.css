@@ -4,7 +4,7 @@
     flex-wrap: wrap;
 }
 .profile_page .col-left{
-    max-width: 400px;
+    max-width: 1200px;
     min-width: 300px;
     padding: 0px 10px;
     margin: auto;
@@ -63,15 +63,17 @@
 .profile_page .col-left label{
     display: block;
     margin-top: 5px;
+    margin-left: 400px;
 }
 .profile_page .col-left input{
-    width: 100%;
+    width: 40%;
     height: 40px;
     margin: 5px 0;
     border: none;
     outline: none;
     background: #fee;
     padding: 0 5px;
+    margin-left: 400px;
 }
 .profile_page .col-left button{
     background: #333;
@@ -80,6 +82,7 @@
     text-transform: uppercase;
     letter-spacing: 1.4px;
     margin: 10px 0;
+    margin-left: 400px;
 }
 
 
