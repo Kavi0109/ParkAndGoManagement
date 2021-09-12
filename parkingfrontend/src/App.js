@@ -16,6 +16,7 @@ import Footer from './components/footer';
 import Aboutus from './components/aboutus.js';
 import Contactus from './components/contactus.js';
 import Gallery from './components/gallery.js';
+import ReportKaveesha from './components/ReportKaveesha.js'
 import Ourprojects from './components/ourprojects';
 import {useDispatch, useSelector} from 'react-redux'
 import {dispatchLogin, fetchUser, dispatchGetUser} from './redux/actions/authAction'
@@ -66,7 +67,7 @@ function App() {
     <div>
       <Menu/>
       <Slider/>
-      <Menubar/>
+      
       <Header/>
       <Body/>
       <Route path="/aboutus" exact component={Aboutus}/>
@@ -80,6 +81,7 @@ function App() {
       <Route path="/basement" exact component={Slottablebasement}/>
       <Route path="/outer" exact component={Slottableouter}/>
       <Route path="/retrieve" exact component={showParking}/>
+      <Route path="/reportKaveesha" exact component={ReportKaveesha}/>
       <Route path="/getp/:id" exact component={updateparking}/>
       <Route path="/bet/:id" component={Payslip} /> 
         <Route exact path="/l" component = {AllLeaves} />

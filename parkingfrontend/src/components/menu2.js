@@ -5,7 +5,7 @@ function menu2(){
 
     return(
 
-        <div >
+        <div style={{marginTop:0}}>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container">
         <Link to="/show" className="navbar-brand">Allot Parking</Link>
@@ -26,6 +26,7 @@ function menu2(){
         <Link to="/home" className="navbar-brand">Manage Salary</Link>
         </div>
         </nav>
+        <br/><br/>
         </div>
     )
 }

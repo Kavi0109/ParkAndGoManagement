@@ -134,7 +134,7 @@ function Insertparking(){
         <Link to="/add" className="navbar-brand">Add New Slot</Link>
         </div>
         <div className="container">
-        <Link to="/retrieve" className="navbar-brand">Reports</Link>
+        <Link to="/reportKaveesha" className="navbar-brand">Reports</Link>
         </div>
         </nav>
         </div>

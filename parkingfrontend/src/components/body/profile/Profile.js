@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import {showErrMsg, showSuccessMsg} from '../../utils/notifications/Notifications'
 import {isLength, isMatch} from '../../utils/validation/Validation'
 import {fetchAllUsers, dispatchGetAllUsers} from '../../../redux/actions/usersAction'
+import Menubar from '../../menu2';
 
 const initialState = {
     firstName : '',
@@ -125,6 +126,7 @@ function Profile() {
             {loading && <h3> Loading..... </h3>}
         </div>
         <div className="profile_page">
+        <Menubar/>
             <div className="col-left">
                 <h2> {isAdmin ? "Admin Profile" : "User Profile" } </h2>
 
