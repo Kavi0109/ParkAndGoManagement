@@ -92,13 +92,6 @@ function Home(){
                     </p>
                 </div>
 
-                <div style={{float:"left"}}>
-                    <p>
-                        When dates are entered, the car parks displayed below are available. If a car park is not presented, 
-                        it is not available for your desired dates. All rates shown are pre booked online rates. 
-                        You must pre book online in advance to access these rates. Drive up tariffs may be different.
-                    </p>
-                </div>
 
 
                 
