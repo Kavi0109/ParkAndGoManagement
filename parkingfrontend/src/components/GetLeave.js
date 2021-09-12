@@ -12,6 +12,7 @@ export default class GetLeave extends Component {
                 <td>{this.props.obj.fromDate}</td>
                 <td>{this.props.obj.noOfDays}</td>
                 <td>{this.props.obj.reason}</td>
+                <td><center>New</center></td>
                 {/* <td>
                     <Link className="edit-link" to={"/get/" + this.props.obj._id}>
                         Edit

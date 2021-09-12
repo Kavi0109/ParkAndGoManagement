@@ -1,23 +1,22 @@
 
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+} */
 
 
-body {
+/* body {
   font-family: roboto, sans-serif;
   background-color:white;
-  /* background-image: url("./car7.jpg"); */
  background-repeat:repeat;
  background-attachment: fixed;
  background-size: 100%; 
     
-}
+} */
 
 h5{
-    color: black;
+  color: #1b7ced;
 }
 h6{
   color: #1b7ced;

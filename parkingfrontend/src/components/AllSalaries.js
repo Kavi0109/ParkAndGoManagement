@@ -35,6 +35,7 @@ export default class AllSalaries extends Component {
 
   render() {
     return (
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <div id="rep1"><center>
         <div className="table-wrapper"> 
            <h5> Salary Report</h5><hr/>
@@ -56,6 +57,7 @@ export default class AllSalaries extends Component {
                 <th>Total Deductions</th>
                 <th>Net Pay</th>
                 <th>Action</th>
+                
               </tr>
             </thead>
             <tbody>
@@ -63,6 +65,8 @@ export default class AllSalaries extends Component {
             </tbody>
           </Table>
         </div></center>
-        </div>);
+        </div>
+        </nav>
+        );
   }
 }

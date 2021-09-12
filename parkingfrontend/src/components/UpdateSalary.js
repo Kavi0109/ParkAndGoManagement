@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import Calc from './Calculator';
 import park3 from './Images/sal3.jpg';
+import {Link} from 'react-router-dom';
 
 export default class UpdateSalary extends Component {
 
@@ -63,6 +64,16 @@ export default class UpdateSalary extends Component {
       Calc();
   }
 
+
+  checknetpay() {
+    var ded = document.getElementById('totDeduction').value;
+    var pay = document.getElementById('basicPay').value ;
+    var net =  document.getElementById('netPay').value;
+    return ((pay - ded) == net) ;
+    
+    
+  }
+
   onChangeemployeeNo(e) {
     this.setState({ employeeNo: e.target.value })
   }
@@ -104,9 +115,16 @@ export default class UpdateSalary extends Component {
     this.setState({ netPay: e.target.value })
   }
 
+  
+
 
   onSubmit(e) {
     e.preventDefault()
+
+    if(!this.checknetpay()){
+      alert('netpay calculation error')
+     }
+     else{
 
     const salaryObject = {
         employeeNo: this.state.employeeNo,
@@ -125,6 +143,9 @@ export default class UpdateSalary extends Component {
       .then((res) => {
         console.log(res.data)
         alert('Salary successfully updated')
+        window.setTimeout(function () {
+          window.location.href = "/";
+        }, 1000);
      
       }).catch((error) => {
         console.log(error)
@@ -132,7 +153,7 @@ export default class UpdateSalary extends Component {
 
     // Redirect to Salary List 
     this.props.history.push('/')
-  }
+  }}
 
 
   render() {
@@ -177,7 +198,7 @@ export default class UpdateSalary extends Component {
 
                 <div className="form-group">
                     <label for="employeeNo" >Emaployee No</label>
-                    <input type="text" className="form-control" id="employeeNo" 
+                    <input type="text" pattern="E[0-9]{3}" className="form-control" id="employeeNo" 
                 value={this.state.employeeNo} onChange={this.onChangeemployeeNo}/>
 
                 </div>
@@ -190,7 +211,7 @@ export default class UpdateSalary extends Component {
 
                 <div className="form-group">
                     <label for="workingDays" >Working Days</label>
-                    <input type="number" className="form-control" id="workingDays" 
+                    <input type="text" className="form-control" id="workingDays" 
                     value={this.state.workingDays} onChange={this.onChangeworkingDays}/>
                     
                 </div>
@@ -244,14 +265,16 @@ export default class UpdateSalary extends Component {
             
                 <div className="form-group">
                     <label for="netPay" >Net Pay</label>
-                    <input type="number" className="form-control" id="netPay"
+                    <input type="text" className="form-control" id="netPay"
                     value={this.state.netPay} onChange={this.onChangenetPay}/>
 
                 </div> 
             
                 <br/><br/>    
-                <button type="submit" className="btn btn-primary" >Update Salary</button>
-
+                <button type="submit" className="Btn5" >Update Salary</button>
+                <Link className="Btn6" to="/">
+                        Cancel
+                    </Link>
         </form> 
     </div> 
 

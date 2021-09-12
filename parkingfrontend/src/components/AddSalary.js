@@ -33,7 +33,6 @@ export default class AddSalary extends Component {
         workingDays: '',
         basicPay: '',
         allowance: '',
-        basicPay: '',
         deduction: '',
         monthTax: '',
         salaryNote: '',
@@ -46,6 +45,14 @@ export default class AddSalary extends Component {
       Calc();
   }
 
+  checknetpay() {
+    var ded = document.getElementById('totDeduction').value;
+    var pay = document.getElementById('basicPay').value ;
+    var net =  document.getElementById('netPay').value;
+    return ((pay - ded) == net) ;
+    
+    
+  }
  
   onChangeemployeeNo(e) {
     this.setState({ employeeNo: e.target.value })
@@ -91,6 +98,10 @@ export default class AddSalary extends Component {
 
   onSubmit(e) {
     e.preventDefault()
+    if(!this.checknetpay()){
+     alert('netpay calculation error')
+    }
+    else{
 
     const salaryObject = {
         employeeNo: this.state.employeeNo,
@@ -109,7 +120,7 @@ export default class AddSalary extends Component {
         console.log(res.data)
         alert('Salary successfully added')
         window.setTimeout(function () {
-          window.location.href = "/add";
+          window.location.href = "/";
         }, 1000);
       }).catch((error) => {
         console.log(error)
@@ -117,13 +128,15 @@ export default class AddSalary extends Component {
     //   .then(res => console.log(res.data));
 
     this.setState({ employeeNo: '', salaryMonth: '', workingDays: '', basicPay:'', allowance:'', deduction: '', monthTax: '', salaryNote: '', totDeduction: '', netPay:''})
-  }
+  }}
 
   render() {
     return (
+      
+  
         <div id="formStyle1">
 
-<h5>ADD EMPLOYEE SALARY</h5>
+          <h5>ADD EMPLOYEE SALARY</h5>
             <hr/>
 
             <div class="nano">
@@ -155,37 +168,39 @@ export default class AddSalary extends Component {
             </div>
            <center><img src={park3} width="400" height="450" alt="..."></img></center><br/>
           </div>
-        <form action="./AllSalary.js" onSubmit={this.onSubmit}>
+        <form onSubmit={this.onSubmit}>
 
                 <div className="form-group">
 
                   <label for="employeeNo" >Emaployee No</label>
-                    <input type="text" className="form-control" id="employeeNo" placeholder="enter employee number" 
+
+						
+                    <input type="text" className="form-control" pattern="E[0-9]{3}" id="employeeNo" placeholder="enter employeeNo starting with E and 3 digits" required 
                 onChange={this.onChangeemployeeNo}/>
 
                 </div>
 
                 <div className="form-group">
                     <label for="salaryMonth" >Salary Month</label>
-                    <input type="month" className="form-control" id="salaryMonth" placeholder="enter salary month" onChange={this.onChangesalaryMonth}/>
+                    <input type="month" className="form-control" id="salaryMonth"  placeholder="enter salary month" required onChange={this.onChangesalaryMonth}/>
                 </div>
 
                 <div className="form-group">
                     <label for="workingDays" >Working Days</label>
-                    <input type="number" className="form-control"  id="workingDays" placeholder="enter working days" 
+                    <input type="number" className="form-control" min="0" max="30" required id="workingDays" placeholder="enter working days" 
                     onChange={this.onChangeworkingDays}/>
                     
                 </div>
                  <div className="form-group">
                     <label for="basicPay" >Basic Pay</label>
-                    <input type="number" className="form-control" id="basicPay" placeholder="enter basicPay"
+                    <input type="number" className="form-control" id="basicPay" required placeholder="enter basicPay"
                     onChange={this.onChangebasicPay}/>
 
                 </div>
 
                 <div className="form-group">
                     <label for="allowance" >Allowances</label>
-                    <input type="number" className="form-control" id="allowance" placeholder="enter Allowances"
+                    <input type="number" className="form-control" required id="allowance" placeholder="enter Allowances"
                     onChange={this.onChangeallowance} />
         
                 </div>
@@ -197,7 +212,7 @@ export default class AddSalary extends Component {
 
                 <div className="form-group">
                     <label for="deduction" >Leave Deductions</label>
-                    <input type="number" className="form-control" id="deduction" 
+                    <input type="number" className="form-control" id="deduction" required
                     onChange={this.onChangededuction} />
                 </div>
 
@@ -210,7 +225,7 @@ export default class AddSalary extends Component {
 
                 <div className="form-group">
                     <label for="salaryNote" >Salary Note</label>
-                    <textarea id="salaryNote" className="form-control" rows="5" columns="20"   
+                    <textarea id="salaryNote" className="form-control" rows="5" columns="20"  required placeholder="note.."
                     onChange={this.onChangesalaryNote}/>
     
                     </div>
@@ -220,14 +235,14 @@ export default class AddSalary extends Component {
                 <div className="form-group">
                 
                 <label for="totDeduction" >Total salary Deductions</label>
-                <input type="number" className="form-control" id="totDeduction"
+                <input type="number" className="form-control" id="totDeduction" required
                     onChange={this.onChangetotDeduction}/>  
 
                 
                 </div> 
                 <div className="form-group">
                    <label for="netPay">Net Pay</label>
-                    <input type="number" className="form-control" id="netPay" onChange={this.onChangenetPay}/>
+                    <input type="text" className="form-control" required id="netPay" onChange={this.onChangenetPay}/>
     
                 </div>
                
@@ -235,9 +250,12 @@ export default class AddSalary extends Component {
                
                 <br/><br/>    
                 <center><button type="submit" className="Btn5" style={{padding:"10px 40px"}}>Submit</button></center>
+               
     
     </form>
+   
     </div>
+   
     // <div className="form-wrapper">
     //   <Form onSubmit={this.onSubmit}>
     //     <Form.Group controlId="Name">

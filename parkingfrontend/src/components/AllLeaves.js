@@ -35,7 +35,8 @@ export default class AllLeaves extends Component {
 
   render() {
     return (
-    
+      <div>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <div className="table-wrapper">
      <div id="home">
      <center> <h5> Leave Report</h5></center><hr/>
@@ -48,10 +49,11 @@ export default class AllLeaves extends Component {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Roll No</th>
-            <th>Action</th>
+            <th>Employee No</th>
+            <th>From Date</th>
+            <th>No Of Days</th>
+            <th>Reason</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -59,6 +61,8 @@ export default class AllLeaves extends Component {
         </tbody>
       </Table>
       </div>
+    </div>
+    </nav>
     </div>
     
     );

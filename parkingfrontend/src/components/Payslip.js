@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 
 export default class Payslip extends Component {
@@ -246,7 +247,10 @@ export default class Payslip extends Component {
         
             </div>
            
-            <center> <button onClick={this.print} class="Btn6">Print Payslip</button></center>
+            <center> <button onClick={this.print} class="Btn5">Print Payslip</button> 
+			<Link className="Btn6" to="/">
+                        Cancel
+                    </Link></center>
 
             </div>
     )
