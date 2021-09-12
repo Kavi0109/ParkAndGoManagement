@@ -25,6 +25,9 @@ function menu2(){
         <div className="container">
         <Link to="/home" className="navbar-brand">Manage Salary</Link>
         </div>
+        <div className="container">
+        <Link to="/home" className="navbar-brand">Ticketing</Link>
+        </div>
         </nav>
         </div>
     )
