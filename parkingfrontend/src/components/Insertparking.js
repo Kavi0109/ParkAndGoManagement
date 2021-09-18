@@ -195,6 +195,7 @@ function Insertparking(){
                     <div class="col-sm-10">
                     <input type="text" className="form-control" id="rno" placeholder="Enter your registration ID.."
                     required
+                    pattern="[A-Z]{1}[0-9]{4}"
                     onChange={(event)=>{
                         setReg_no(event.target.value);
                     }} /></div>

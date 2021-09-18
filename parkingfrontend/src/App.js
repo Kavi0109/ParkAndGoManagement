@@ -47,6 +47,10 @@ import EditEmployeeDetails from "./components/Employees/EditEmployeeDetails";
 import EmployeeHome from "./components/Employees/EmployeeHome";
 import UploadImage from "./components/Employees/UploadImage";
 import HomeMain from './components/HomeMain';
+import Transportation from './components/Transportation';
+import Bus from './components/Bus';
+import AddingBus from './components/AddingBus.js';
+
 
 function App() {
   const dispatch = useDispatch()
@@ -91,10 +95,7 @@ function App() {
       />
     <Router>
     <div>
-      <Menu/>
-      <Slider/>
       <Menubar/>
-      <Header/>
       <Body/>
       <Route path="/HomeMain" exact component={HomeMain}/>
       <Route path="/aboutus" exact component={Aboutus}/>
@@ -137,6 +138,10 @@ function App() {
             exact
             component={EditEmployeeDetails}
           />
+
+          <Route path="/transportation" exact component={Transportation}/>
+          <Route path="/viewbusses" exact component={Bus}/>
+          <Route path="/addnewbus" exact component={AddingBus}/>
         </Switch>
       <Footer/>
     </div>
