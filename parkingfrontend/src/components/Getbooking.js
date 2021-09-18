@@ -19,6 +19,12 @@ export default class getBooking extends Component {
         axios.delete('/booking/delete-booking/' + this.props.obj._id)
             .then((res) => {
                 alert('Booking successfully deleted!')
+
+                //load the page again after deleting the record
+                window.setTimeout(function(){
+                    window.location.href="/allBooking";
+                }, 1000);
+
             }).catch((error) => {
                 console.log(error)
             })
@@ -39,6 +45,12 @@ export default class getBooking extends Component {
                 <td>{this.props.obj.ExitDate}</td>
                 <td>{this.props.obj.BusNo}</td>
                 <td>{this.props.obj.BusRoute}</td>
+                <td>{this.props.obj.CardNo}</td>
+                <td>{this.props.obj.CardHolderName}</td>
+                <td>{this.props.obj.ExpireDate}</td>
+                <td>{this.props.obj.SecurityCode}</td>
+                
+                
                
 
                 <td>

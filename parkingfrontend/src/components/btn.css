@@ -61,6 +61,23 @@
     
 }
 
+.Back{
+    background-color: #008CBA;
+    border: none;
+    width: 250px;
+    color: white;
+    padding: 10px 32px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+
 .HomeBookingbtn{
     background-color: #008CBA;
     border: none;

@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 import Getbooking from './Getbooking';
+import Button from 'react-bootstrap/Button';
+import './btn.css'
 
 
 
@@ -46,7 +48,9 @@ export default class Allbookings extends Component {
   render() {
     return (<div className="table-wrapper">
       <br/>
-      <h3>All Booking Details</h3>
+      <h2>All Booking Details</h2>
+
+      
       
 
       <Table striped bordered hover>
@@ -62,6 +66,10 @@ export default class Allbookings extends Component {
             <th>Exit Date</th>
             <th>BusNo</th>
             <th>BusRoute</th>
+            <th>Card No</th>
+            <th>CardHolderName</th>
+            <th>ExpireDate</th>
+            <th>SecurityCode</th>
             <th>Update</th>
             <th>Delete</th>
 
@@ -71,6 +79,11 @@ export default class Allbookings extends Component {
           {this.DataTable()}
         </tbody>
       </Table>
+
+      <a href="/homeRishma">
+        <button className="Back">Back</button>
+      </a>
+
     </div>);
   }
 }

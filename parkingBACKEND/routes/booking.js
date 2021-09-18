@@ -16,13 +16,13 @@ router.route("/addRishma").post((req,res)=>{
     const Address =req.body.Address;
     const PlateNumber =req.body.PlateNumber;
     const VehicleModel=req.body.VehicleModel;
-    const EntryDate=req.body.EntryDate;
-    const ExitDate=req.body.ExitDate;
+    const EntryDate=Date(req.body.EntryDate);
+    const ExitDate=Date(req.body.ExitDate);
     const BusNo=req.body.BusNo;
     const BusRoute=req.body.BusRoute;
     const CardNo=req.body.CardNo;
     const CardHolderName=req.body.CardHolderName;
-    const ExpireDate=req.body.ExpireDate;
+    const ExpireDate=Date(req.body.ExpireDate);
     const SecurityCode=Number(req.body.SecurityCode);
 
 
@@ -42,9 +42,7 @@ router.route("/addRishma").post((req,res)=>{
         CardNo,
         CardHolderName,
         ExpireDate,
-        SecurityCode
-
-        
+        SecurityCode   
     })
 
 
@@ -62,27 +60,27 @@ router.route("/addRishma").post((req,res)=>{
 
 //update data
 
-/*router.route("/update-booking/:id").put(async(req,res)=>{
+router.route("/update-booking/:id").put(async(req,res)=>{
     let userId = req.params.id;
     const {BookingID, Firstname,Lastname,Contactnumber,Address,PlateNumber,VehicleModel,EntryDate,ExitDate,BusNo,BusRoute,CardNo,CardHolderName,ExpireDate,SecurityCode} = req.body;
 
 
     const updateBooking ={
-        BookingID,
-        Firstname,
-        Lastname,
-        Contactnumber,
-        Address,
-        PlateNumber,
-        VehicleModel,
-        EntryDate,
-        ExitDate,
-        BusNo,
-        BusRoute,
-        CardNo,
-        CardHolderName,
-        ExpireDate,
-        SecurityCode
+      BookingID,
+      Firstname,
+      Lastname,
+      Contactnumber,
+      Address,
+      PlateNumber,
+      VehicleModel,
+      EntryDate,
+      ExitDate,
+      BusNo,
+      BusRoute,
+      CardNo,
+      CardHolderName,
+      ExpireDate,
+      SecurityCode
     }
 
 
@@ -94,12 +92,12 @@ router.route("/addRishma").post((req,res)=>{
         console.log(err);
         res.status(500).send({status:"Error with updating booking",error:err.message})
     })   
-})*/
+})
 
 
 
 // Update Student
-router.route('/update-booking/:id').put((req, res, next) => {
+/*router.route('/update-booking/:id').put((req, res, next) => {
     Booking.findByIdAndUpdate(req.params.id, {
       $set: req.body
     }, (error, data) => {
@@ -111,7 +109,7 @@ router.route('/update-booking/:id').put((req, res, next) => {
         console.log('Booking updated successfully !')
       }
     })
-})
+})*/
 
 
 
@@ -134,7 +132,7 @@ router.route('/delete-booking/:id').delete((req, res, next) => {
 
 
   
-// READ Booking
+// READ all the Booking
 router.route('/allBooking').get((req, res) => {
     Booking.find((error, data) => {
       if (error) {

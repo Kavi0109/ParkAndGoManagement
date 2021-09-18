@@ -1,25 +1,29 @@
-import React,{useState} from "react";
-import axios from "axios";
+import React,{useState} from "react";//importing the useState Hook from React
+import axios from "axios"; //pass data between backend and frontend
+import DatePicker from 'react-datetime';
+import moment from 'moment';
+import 'react-datetime/css/react-datetime.css';
 import './btn.css'
 
 
 
 export default function AddBooking(){
 
+    
     const [BookingID,setBookingID] = useState("");
-    const [Firstname,setFirstname] = useState("");
+    const [Firstname,setFirstname] = useState("");// a Hook
     const [Lastname,setLastname] = useState("");
     const [Contactnumber,setContactnumber] = useState("");
     const [Address,setAddress] = useState("");
     const [PlateNumber,setPlateNumber] = useState("");
     const [VehicleModel,setVehicleModel] = useState("");
-    const [EntryDate,setEntryDate] = useState("");
-    const [ExitDate,setExitDate] = useState("");
+    const [EntryDate,setEntryDate] = useState(moment());
+    const [ExitDate,setExitDate] = useState(moment());
     const [BusNo,setBusNo] = useState("");
     const [BusRoute,setBusRoute] = useState("");
     const [CardNo,setCardNo] = useState("");
     const [CardHolderName,setCardHolderName] = useState("");
-    const [ExpireDate,setExpireDate] = useState("");
+    const [ExpireDate,setExpireDate] = useState(moment());
     const [SecurityCode,setSecurityCode] = useState("");
     
    
@@ -27,7 +31,7 @@ export default function AddBooking(){
 
 
     function sendData(event){
-        event.preventDefault();//prevent from refreshing the page
+        event.preventDefault();//prevent from refreshing the page, (default action that belongs to the event will not occur.)
         
         const newBooking = {
             BookingID,
@@ -47,9 +51,16 @@ export default function AddBooking(){
             SecurityCode
         }
 
+        //send data to the backend using axios
+
         axios.post("/booking/addRishma",newBooking).then(()=>{
             
             alert("Booking Added")
+
+            //load the page again after deleting the record
+            window.setTimeout(function(){
+                window.location.href="/addRishma";
+            }, 1000);
 
         }).catch((err)=>{
             alert(err)
@@ -57,6 +68,12 @@ export default function AddBooking(){
 
 
     }
+
+    //Disable past dates
+    const yesterday = moment().subtract(1, 'day');
+    const disablePastDt = current => {
+    return current.isAfter(yesterday);
+    };
 
 
     return(
@@ -75,7 +92,7 @@ export default function AddBooking(){
 
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="BookingID">Booking ID</label>
+                        <label htmlFor="BookingID" class="col-sm-2 col-form-label" for="BookingID">Booking ID</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -96,7 +113,7 @@ export default function AddBooking(){
 
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="Firstname">First Name</label>
+                        <label htmlFor="Firstname" class="col-sm-2 col-form-label" for="Firstname">First Name</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -117,7 +134,7 @@ export default function AddBooking(){
 
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="Lastname">Last Name</label>
+                        <label htmlFor="Lastname" class="col-sm-2 col-form-label" for="Lastname">Last Name</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -138,7 +155,7 @@ export default function AddBooking(){
 
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="Contactnumber">Contact Number</label>
+                        <label htmlFor="Contactnumber" class="col-sm-2 col-form-label" for="Contactnumber">Contact Number</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -159,7 +176,7 @@ export default function AddBooking(){
 
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="Address">Address</label>
+                        <label htmlFor="Address" class="col-sm-2 col-form-label" for="Address">Address</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -184,7 +201,7 @@ export default function AddBooking(){
                     <br/>
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="PlateNumber">Licence Plate Number</label>
+                        <label htmlFor="PlateNumber" class="col-sm-2 col-form-label" for="PlateNumber">Licence Plate Number</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -196,6 +213,7 @@ export default function AddBooking(){
                                 setPlateNumber(event.target.value);
                             }}
                             required
+                            
                         />
                         </div>
                     </div>
@@ -204,7 +222,7 @@ export default function AddBooking(){
 
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="VehicleModel">Vehicle Model</label>
+                        <label htmlFor="VehicleModel" class="col-sm-2 col-form-label" for="VehicleModel">Vehicle Model</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -223,41 +241,33 @@ export default function AddBooking(){
                     
                     <br/><br/><br/>
 
-                    <h3>Entry/Exit Date Details</h3>
+                    <h3>Entry/Exit Date and Time Details</h3>
                     
                     <br/>
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="EntryDate">Entry Date</label>
+                        <label htmlFor="EntryDate" class="col-sm-2 col-form-label" for="EntryDate">Entry Date/Time</label>
 
                         <div class="col-sm-10">
-                        <input 
-                            type="date" 
-                            className="form-control" 
-                            id="EntryDate" 
-                            onChange={(event)=>{
-                                setEntryDate(event.target.value);
-                            }}
-                            required
-                        />
+                        <DatePicker
+                            isValidDate={disablePastDt}
+                            value={EntryDate}
+                            onChange={val => setEntryDate(val)}
+                        /> 
                         </div>
                     </div>
                     
                     <br/>
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="ExitDate">Exit Date</label>
+                        <label htmlFor="ExitDate" class="col-sm-2 col-form-label" for="ExitDate">Exit Date</label>
 
                         <div class="col-sm-10">
-                        <input 
-                            type="date" 
-                            className="form-control" 
-                            id="ExitDate" 
-                            onChange={(event)=>{
-                                setExitDate(event.target.value);
-                            }}
-                            required
-                        />
+                        <DatePicker
+                            isValidDate={disablePastDt}
+                            value={ExitDate}
+                            onChange={val => setExitDate(val)}
+                        /> 
                         </div>
                     </div>
                     
@@ -269,7 +279,7 @@ export default function AddBooking(){
                     <br/>
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="BusNo">Bus Number</label>
+                        <label htmlFor="BusNo" class="col-sm-2 col-form-label" for="BusNo">Bus Number</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -289,7 +299,7 @@ export default function AddBooking(){
                     <br/>
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="BusRoute">Bus Route</label>
+                        <label htmlFor="BusRoute" class="col-sm-2 col-form-label" for="BusRoute">Bus Route</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -301,6 +311,8 @@ export default function AddBooking(){
                                 setBusRoute(event.target.value);
                             }}
                             required
+                            maxValue={250}
+                            minValue={0}
                         />
                         </div>
                     </div>
@@ -314,7 +326,7 @@ export default function AddBooking(){
                     <br/>
 
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="CardNo">Card Number</label>
+                        <label htmlFor="CardNo" class="col-sm-2 col-form-label" for="CardNo">Card Number</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -333,7 +345,7 @@ export default function AddBooking(){
                     <br/>
                     
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="CardHolderName">Card Holder Name</label>
+                        <label htmlFor="CardHolderName" class="col-sm-2 col-form-label" for="CardHolderName">Card Holder Name</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -352,25 +364,22 @@ export default function AddBooking(){
                     <br/>
                     
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="ExpireDate">Expire Date</label>
+                        <label htmlFor="ExpireDate" class="col-sm-2 col-form-label" for="ExpireDate">Expire Date</label>
 
                         <div class="col-sm-10">
-                        <input 
-                            type="date" 
-                            className="form-control" 
-                            id="ExpireDate" 
-                            onChange={(event)=>{
-                                setExpireDate(event.target.value);
-                            }}
-                            required
-                        />
+                        <DatePicker
+                            isValidDate={disablePastDt}
+                            value={ExpireDate}
+                            onChange={val => setExpireDate(val)}
+                        /> 
+                        
                         </div>
                     </div>
 
                     <br/>
                     
                     <div class="row">
-                        <label htmlFor="Option" class="col-sm-2 col-form-label" for="SecurityCode">Security Code</label>
+                        <label htmlFor="SecurityCode" class="col-sm-2 col-form-label" for="SecurityCode">Security Code</label>
 
                         <div class="col-sm-10">
                         <input 
@@ -398,7 +407,9 @@ export default function AddBooking(){
                     <br/>
 
                     <div className="Submitbtndiv">
-                        <button type="submit" className="Submitbtn">Submit</button>
+                        <a href="/PaymentForm">
+                            <button type="submit" className="Submitbtn">Submit</button>
+                        </a>
                     </div>
                     
                 </form>
