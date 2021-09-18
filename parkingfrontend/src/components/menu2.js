@@ -42,7 +42,7 @@ function Header(){
                     </ul>
                     <form class="form-inline mr-auto" target="_self">
                         <div class="form-group"><label for="search-field"><i class="fa fa-search text-white"></i></label><input class="form-control search-field" type="search" id="search-field" name="search"/></div>
-                    </form><span class="navbar-text"> <a class="login" href="#">Log In</a></span><a class="btn btn-light action-button" role="button" href="#">Signup</a>
+                    </form><span class="navbar-text"> <a class="login" href="/login">Log In</a></span><a class="btn btn-light action-button" role="button" href="/register">Signup</a>
                 </div>
             </div>
         </nav>
