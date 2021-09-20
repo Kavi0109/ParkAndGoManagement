@@ -45,19 +45,9 @@ export default class getBooking extends Component {
                 <td>{this.props.obj.ExitDate}</td>
                 <td>{this.props.obj.BusNo}</td>
                 <td>{this.props.obj.BusRoute}</td>
-                <td>{this.props.obj.CardNo}</td>
-                <td>{this.props.obj.CardHolderName}</td>
-                <td>{this.props.obj.ExpireDate}</td>
-                <td>{this.props.obj.SecurityCode}</td>
                 
                 
-               
-
-                <td>
-                    <Link to={"/edit-booking/" + this.props.obj._id}>
-                        <button className="Updatebtn">Edit</button>
-                    </Link>
-                </td>
+                
 
                 
                 <td><Button onClick={this.deleteBooking} size="sm" variant="danger" className="Deletebtn" >Delete</Button></td>
@@ -65,3 +55,10 @@ export default class getBooking extends Component {
         );
     }
 }
+
+/* <td>
+    <Link to={"/edit-booking/" + this.props.obj._id}>
+    <button className="Updatebtn">Edit</button>
+    </Link>
+    </td> 
+*/

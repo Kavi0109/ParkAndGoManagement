@@ -1,108 +1,128 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import logo from './backimage1.jpg';
 
-const logosize={
-    width:'30%',
-    height:'30%'
-}
+import React from "react";
+import './sayuru.css'
 
-function footer(){
 
-    return(
 
-        <div>
-        <footer className="py-5">
-          <div className="container py-xl-4">
-            <div className="row footer-top">
-              <div className="col-lg-4 footer-grid_section_1its footer-text">
-                <h2>
-                  <a className="logo text-wh" href="index.html">
-                    <img src="{Logo}" alt="" className="img-fluid" />
-                    <br />
-                    <span></span> PARK AND GO SYSTEM
-                  </a>
-                </h2>
-              </div>
-              <div className="col-lg-4 footer-grid_section_1its my-lg-0 my-sm-4 my-4">
-                <div className="footer-title">
-                  <h3>Contact Us</h3>
-                </div>
-                <div className="footer-text mt-4">
-                  <p>Address : Negombo-Colombo Main Rd, Seeduwa</p>
-                  <p className="my-2">Phone : +94- 70 700 0005</p>
-                  <p>
-                    Email :{" "}
-                    <a href="mailto:info@example.com">goandpark@gmail.com</a>
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-4 footer-grid_section_1its">
-                <div className="footer-title">
-                  <h3>Request Info</h3>
-                </div>
-                <div className="info-form-right mt-4 p-0">
-                  <form action="/" method="post">
-                    <div className="row">
-                      <div className="col-lg-6 form-group mb-2 pr-lg-1">
-                        <input
-                          type="text"
-                          className="form-control"
-                          name="Name"
-                          placeholder="Name"
-                          required
-                        />
-                      </div>
-                      <div className="col-lg-6 form-group mb-2 pl-lg-1">
-                        <input
-                          type="text"
-                          className="form-control"
-                          name="Phone"
-                          placeholder="Phone"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="form-group mb-2">
-                      <input
-                        type="email"
-                        className="form-control"
-                        name="Email"
-                        placeholder="Email"
-                        required
-                      />
-                    </div>
-                    <div className="form-group mb-2">
-                      <textarea
-                        name="Comment"
-                        className="form-control"
-                        placeholder="Comment"
-                        required
-                        defaultValue={""}
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="btn submit-contact ml-auto"
-                    >
-                      Submit
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-        <div className="cpy-right text-center py-3">
-          <p>© 2021 PARK AND GO SYSTEM. All rights reserved</p>
-        </div>
-        <a href="home" className="move-top text-center">
-          <span className="fa fa-level-up" aria-hidden="true" />
-        </a>
+function Footer(){
+  return(
+    <div><footer id="footer">
+      <div className="footer-top">
+      <div className="container">
+      <div className="row">
+      <div className="col-lg-3 col-md-6 footer-contact">
+      <h3>ParkExpress</h3>
+      <p>
+      22/A HOMIES ROAD <br />
+      KALUTARA, 12000
+      <br />
+      Sri Lanka <br />
+      <br />
+      <strong>Phone:</strong> +94 34 2264535
+      <br />
+      <strong>Email:</strong> admin@parkxpress.com
+      <br />
+      </p>
       </div>
-    )
-}
+      <div className="col-lg-2 col-md-6 footer-links">
+      <h4>Useful Links</h4>
+      <ul>
+      <li>
+      <i className="bx bx-chevron-right" /> <a href="#">Home</a>
+      </li>
+      <li>
+      <i className="bx bx-chevron-right" /> <a href="#">About us</a>
+      </li>
+      <li>
+      <i className="bx bx-chevron-right" /> <a href="#">Contact us</a>
+      </li>
+      <li>
+      <i className="bx bx-chevron-right" /> <a href="#">Gallery</a>
+      </li>
+      <li>
+      <i className="bx bx-chevron-right" /> <a href="#">Our Projects</a>
+      </li>
+      <li>
+      <i className="bx bx-chevron-right" />{" "}
+      <a href="#">Terms of service</a>
+      </li>
+      <li>
+      <i className="bx bx-chevron-right" />{" "}
+      <a href="#">Privacy policy</a>
+      </li>
+      </ul>
+    </div>
 
+    
+    <div className="col-lg-3 col-md-6 footer-links">
+    <h4>Our Services</h4>
+    <ul>
+    <li>
+    <i className="bx bx-chevron-right" /> <a href="#">Booking</a>
+    </li>
+    <li>
+    <i className="bx bx-chevron-right" />{" "}
+    <a href="#">Allot Parking</a>
+    </li>
+    <li>
+    <i className="bx bx-chevron-right" />{" "}
+    <a href="#">Shuttle Routes</a>
+    </li>
+    <li>
+    <i className="bx bx-chevron-right" /> <a href="#">GPS Tracker</a>
+    </li>
+    <li>
+    <i className="bx bx-chevron-right" />{" "}
+    <a href="#">Ticketing</a>
+    </li>
+    </ul>
+    </div>
+    <div className="col-lg-4 col-md-6 footer-newsletter">
+    <h4>Join Our Newsletter</h4>
+    <p>
+    “Trust your own instinct. Your mistakes might as well be your own, instead of someone else’s.”
+    – Billy Wilder
+    </p>
+    <form action="/test" method="post">
+    <input type="email" name="email" />
+    <input type="submit" defaultValue="Subscribe" />
+    </form> <div className="social-links">
+    <a href="#" className="fa fa-twitter">
+    <i className="bx bxl-twitter" />
+    </a>
+    <a target="_blank" href="#" className="facebook">
+    <i className="fa fa-facebook" />
+    </a>
+    <a href="#" className="instagram">
+    <i className="fa fa-instagram" />
+    </a>
+    <a href="#" className="google-plus">
+    <i className="fa fa-google-plus" />
+    </a>
+    <a href="#" className="linkedin">
+    <i className="fa fa-linkedin" />
+    </a>
+    </div> </div>
+    </div>
+    </div>
+    </div>
+    <div className="container">
+    <div className="copyright-wrap d-md-flex py-4">
+    <div className="me-md-auto text-center text-md-start">
+    <div className="copyright">
+    © Copyright{" "}
+    <strong>
+    <span>Techie</span>
+    </strong>
+    . All Rights Reserved
+    </div>
+    <div className="credits">
+    Designed by <a target="_blank" href="https://teamtrees.org/">Clovers</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    </footer> </div>
+  )
+}export default Footer;
 
-
-export default footer;

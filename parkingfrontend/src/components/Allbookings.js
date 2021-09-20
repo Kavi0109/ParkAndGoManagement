@@ -65,12 +65,8 @@ export default class Allbookings extends Component {
             <th>Entry Date</th>
             <th>Exit Date</th>
             <th>BusNo</th>
-            <th>BusRoute</th>
-            <th>Card No</th>
-            <th>CardHolderName</th>
-            <th>ExpireDate</th>
-            <th>SecurityCode</th>
-            <th>Update</th>
+            <th>BusRoute</th> 
+           
             <th>Delete</th>
 
           </tr>
@@ -82,7 +78,7 @@ export default class Allbookings extends Component {
 
       <a href="/homeRishma">
         <button className="Back">Back</button>
-      </a>
+      </a><br/><br/><br/>
 
     </div>);
   }
