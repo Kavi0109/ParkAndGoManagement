@@ -142,9 +142,9 @@ export default class UpdateBooking extends Component {
 
 
   onSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    const BookingObject = {
+    const obj = {
       
       BookingID:this.state.BookingID,
       Firstname: this.state.Firstname,
@@ -165,7 +165,7 @@ export default class UpdateBooking extends Component {
 
     };
 
-    axios.put('/booking/update-booking/' + this.props.match.params.id, BookingObject)
+    axios.put('/booking/update-booking/' + this.props.match.params.id, obj)
       .then((res) => {
         alert('Booking successfully updated')
         console.log(res.data)
@@ -199,8 +199,15 @@ export default class UpdateBooking extends Component {
           <br/>
 
           <div className="form-group">
-            <label htmlFor="Lastname">Last Name: (in inches):</label>
+            <label htmlFor="Lastname">Last Name: </label>
             <input type="text" className="form-control" value={this.state.Lastname} onChange={this.onChangeLastname} />
+          </div>
+
+          <br/>
+
+          <div className="form-group">
+            <label htmlFor="Lastname">Contact Number: </label>
+            <input type="text" className="form-control" value={this.state.Contactnumber} onChange={this.onChangeContactnumber} />
           </div>
 
           <br/>

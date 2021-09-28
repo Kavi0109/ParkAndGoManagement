@@ -41,14 +41,14 @@ return(
 
 	</div></div>
         
-		  <div style={{float:"right"}}>
+		<div style={{float:"right"}}>
 	
-	<div class ="Lcard">
-		<div class= "Lcard-image5"></div>
-        <div class="Lcard-text">
-				<h4 style={{color:"#1b7ced"}}>About salary management</h4>
-				<p>Salary Managgement is the process of managing the salary of employees and analyzing, and determining the salary, and benefits each employee receives.Effective Salary management benefits both the employer and the employee.</p>
-				<button href="Land.html"  class="Btn5">Show more</button>
+			<div class ="Lcard">
+			<div class= "Lcard-image5"></div>
+			<div class="Lcard-text">
+					<h4 style={{color:"#1b7ced"}}>About salary management</h4>
+					<p>Salary Managgement is the process of managing the salary of employees and analyzing, and determining the salary, and benefits each employee receives.Effective Salary management benefits both the employer and the employee.</p>
+					<button href="Land.html"  class="Btn5">Show more</button>
 			</div>
 
 

@@ -155,6 +155,17 @@ router.route('/edit-booking/:id').get((req, res) => {
 })
 
 
+// Get Single Booking(booking slip)
+router.route('/dis-booking/:id').get((req, res) => {
+  Booking.findById(req.params.id, (error, data) => {
+      if (error) {
+          return next(error)
+      } else {
+          res.json(data)
+      }
+  })
+})
+
 
 
 

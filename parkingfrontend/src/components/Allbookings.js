@@ -34,9 +34,10 @@ export default class Allbookings extends Component {
   }
 
   DataTable() {
-    return this.state.bookings.map((res, i) => {
-      return <Getbooking obj={res} key={i} />;
-    });
+    return this.state.bookings.map(
+      function(object,i) {
+        return <Getbooking obj={object} key={i} />;
+      });
   }
 
 
@@ -58,6 +59,7 @@ export default class Allbookings extends Component {
           <tr>
             <th>Booking ID</th>
             <th>First name</th>
+            <th>Lastname</th>
             <th>Contact number</th>
             <th>Address</th>
             <th>Plate Number</th>
@@ -65,9 +67,10 @@ export default class Allbookings extends Component {
             <th>Entry Date</th>
             <th>Exit Date</th>
             <th>BusNo</th>
-            <th>BusRoute</th> 
-           
+            <th>BusRoute</th>
+            
             <th>Delete</th>
+            <th>Booking Report</th>
 
           </tr>
         </thead>
@@ -83,3 +86,12 @@ export default class Allbookings extends Component {
     </div>);
   }
 }
+
+/*
+<th>CardNo</th>
+<th>CardHolderName</th> 
+<th>ExpireDate</th>  
+<th>SecurityCode</th>
+<th>Update</th>
+
+*/

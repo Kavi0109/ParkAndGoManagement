@@ -80,7 +80,7 @@ function Home(){
                 </div>
                 <br/>
                 <div>
-                    <a>
+                    <a href="/fandQ">
                         <button className="HomeBookingDetailsbtn">Help and FAQ</button>
                     </a>
                 </div>
@@ -117,6 +117,7 @@ function Home(){
                     <h1>Packages</h1>
                     <br/><br/><br/>
                     <div class="column">
+
                         <a href="/addRishma">
                             <img src={park9} class="d-block" width="100%" height="200" alt="..."></img>
                         </a>
@@ -129,7 +130,11 @@ function Home(){
 
                         The cost effective way to drive yourself & walk to the terminal.
                         Secure and monitored.
-                        <br/>  
+                        <br/> 
+
+                        <a href="/addRishma">
+                            <button className="homerishGridbtn">Learn more ...</button>
+                        </a> 
                         
                         
                         </p>
@@ -148,7 +153,11 @@ function Home(){
 
                         Covered and uncovered parking building.
                         
-                        <br/>    
+                        <br/> 
+
+                        <a href="/addRishma">
+                            <button className="homerishGridbtn">Learn more ...</button>
+                        </a>   
                         
                         </p>  
                         <br/>
@@ -170,7 +179,11 @@ function Home(){
                         Over 100 car parks spaces.
                         Open and easy.
                         Value for money.
-                        <br/>    
+                        <br/>  
+
+                        <a href="/addRishma">
+                            <button className="homerishGridbtn">Learn more ...</button>
+                        </a>  
                         
                         </p> 
                         <br/>
@@ -179,14 +192,18 @@ function Home(){
                             <img src={park11} class="d-block" width="100%" height="200" alt="..."></img>
                         </a>
                         <br/>
-                        <h4>Dropoff and Pick up</h4>
+                        <h4>Dropoff & Pick up</h4>
                         
                         <p>
                         3-5 min to terminal
 
                         Plenty of parks within a short walk to the terminal.
                         Open and easy.
-                        <br/>    
+                        <br/>
+
+                        <a href="/addRishma">
+                            <button className="homerishGridbtn">Learn more ...</button>
+                        </a>    
                         
                         </p> 
                         <br/>
@@ -208,7 +225,11 @@ function Home(){
                         Value for money. 
                         Open and easy.
                         The ultimate for speed and convenienc.
-                        <br/>    
+                        <br/>  
+
+                        <a href="/addRishma">
+                            <button className="homerishGridbtn">Learn more ...</button>
+                        </a>  
                         
                         </p> 
                         <br/>
@@ -224,7 +245,11 @@ function Home(){
 
                         Domestic terminal.
                         The ultimate for speed and convenience.
-                        <br/>    
+                        <br/>  
+
+                        <a href="/addRishma">
+                            <button className="homerishGridbtn">Learn more ...</button>
+                        </a>  
                         
                         </p> 
                         <br/>

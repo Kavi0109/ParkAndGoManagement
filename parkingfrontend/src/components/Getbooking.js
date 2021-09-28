@@ -36,7 +36,8 @@ export default class getBooking extends Component {
         return (
             <tr>
                 <td>{this.props.obj.BookingID}</td>
-                <td>{this.props.obj.Firstname}</td>   
+                <td>{this.props.obj.Firstname}</td>  
+                <td>{this.props.obj.Lastname}</td>
                 <td>{this.props.obj.Contactnumber}</td>
                 <td>{this.props.obj.Address}</td>
                 <td>{this.props.obj.PlateNumber}</td>
@@ -48,17 +49,34 @@ export default class getBooking extends Component {
                 
                 
                 
+                
 
                 
                 <td><Button onClick={this.deleteBooking} size="sm" variant="danger" className="Deletebtn" >Delete</Button></td>
+
+                <td>
+                <Link className="bookingslipbtn" to={"/dis-booking/" + this.props.obj._id}>
+                    Booking Slip
+                </Link>
+                </td>
+
             </tr>
         );
     }
 }
 
-/* <td>
+/*  <td>
     <Link to={"/edit-booking/" + this.props.obj._id}>
-    <button className="Updatebtn">Edit</button>
+        <button className="Updatebtn">Edit</button>
     </Link>
-    </td> 
+    </td>
+
+
+
+
+
+    <td>{this.props.obj.CardNo}</td>
+    <td>{this.props.obj.CardHolderName}</td>
+    <td>{this.props.obj.ExpireDate}</td>
+    <td>{this.props.obj.SecurityCode}</td>
 */
