@@ -49,10 +49,10 @@ export default class Allbookings extends Component {
   render() {
     return (
       <div className="table-wrapper">
-        <br/>
+        <br/><br/><br/><br/>
         <h2>All Booking Details</h2>
 
-
+        <br/><br/>
         
         <div class="SearchPaddng">  
           <form action="" class="searchForm">
@@ -80,7 +80,7 @@ export default class Allbookings extends Component {
               <th>BusRoute</th>
               <th>Update</th>
               <th>Delete</th>
-              <th>Booking Report</th>
+              <th>Print Booking Details </th>
 
             </tr>
           </thead>

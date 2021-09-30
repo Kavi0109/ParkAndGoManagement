@@ -332,7 +332,7 @@ export default function AddBooking(){
                                     type="text"
                                     className="form-control"
                                     id="PlateNumber"
-                                    pattern="[A-Z]-[0-9]{4}"
+                                    pattern="[A-Z]{3}-[0-9]{4}"
                                     placeholder="DSA-1122"
                                     onChange={(event) => {
                                         setPlateNumber(event.target.value);
@@ -510,7 +510,7 @@ export default function AddBooking(){
                                     onChange={(event) => {
                                         setSecurityCode(event.target.value);
                                     }}
-                                    required/>
+                                    required maxlength="4"/>
                             </div>
                         </div>
 
