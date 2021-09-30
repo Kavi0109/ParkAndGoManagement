@@ -57,60 +57,36 @@ router.route("/addRishma").post((req,res)=>{
 
 
 
-
-//update data
-
+//Update booking details
 router.route("/update-booking/:id").put(async(req,res)=>{
-    let userId = req.params.id;
-    const {BookingID, Firstname,Lastname,Contactnumber,Address,PlateNumber,VehicleModel,EntryDate,ExitDate,BusNo,BusRoute,CardNo,CardHolderName,ExpireDate,SecurityCode} = req.body;
+  let bookId = req.params.id;
 
+  //destructure method
+  const { BookingID, Firstname,Lastname,Contactnumber,Address,PlateNumber,VehicleModel,EntryDate,ExitDate,BusNo,BusRoute} = req.body;
 
-    const updateBooking ={
-      BookingID,
-      Firstname,
-      Lastname,
-      Contactnumber,
-      Address,
-      PlateNumber,
-      VehicleModel,
-      EntryDate,
-      ExitDate,
-      BusNo,
-      BusRoute,
-      CardNo,
-      CardHolderName,
-      ExpireDate,
-      SecurityCode
-    }
+  const updateBooking = {
+    BookingID,
+    Firstname,
+    Lastname,
+    Contactnumber,
+    Address,
+    PlateNumber,
+    VehicleModel,
+    EntryDate,
+    ExitDate,
+    BusNo,
+    BusRoute
+  }
 
+  const update = await Booking.findByIdAndUpdate(bookId, updateBooking).then(()=>{
+      res.status(200).send({status: "Booking updated"})
+  }).catch((err)=>{
+      console.log(err);
+      res.status(500).send({status: "Error with updating booking",error:err.message});
+  })
 
-
-
-    const update = await Booking.findByIdAndUpdate(userId,{updateBooking}).then(()=>{
-        res.status(200).send({status: "Booking Updated"})
-    }).catch((err) => {
-        console.log(err);
-        res.status(500).send({status:"Error with updating booking",error:err.message})
-    })   
+  
 })
-
-
-
-// Update Student
-/*router.route('/update-booking/:id').put((req, res, next) => {
-    Booking.findByIdAndUpdate(req.params.id, {
-      $set: req.body
-    }, (error, data) => {
-      if (error) {
-        return next(error);
-        console.log(error)
-      } else {
-        res.json(data)
-        console.log('Booking updated successfully !')
-      }
-    })
-})*/
-
 
 
 

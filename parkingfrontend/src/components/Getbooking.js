@@ -49,7 +49,11 @@ export default class getBooking extends Component {
                 
                 
                 
-                
+                <td>
+                    <Link to={"/edit-booking/" + this.props.obj._id}>
+                        <button className="Updatebtn">Edit</button>
+                    </Link>
+                </td>
 
                 
                 <td><Button onClick={this.deleteBooking} size="sm" variant="danger" className="Deletebtn" >Delete</Button></td>

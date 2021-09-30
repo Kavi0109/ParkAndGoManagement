@@ -50,7 +50,7 @@ const bookingSchema = new Schema({
     },
 
     BusNo:{
-        type:String,
+        type:Number,
         require:true
     },
 

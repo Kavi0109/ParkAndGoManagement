@@ -36,7 +36,7 @@ import BookingForm from './components/BookingForm.js';
 import Allbookings from './components/Allbookings';
 import HeaderRishma from './components/HeaderRishma';
 import HomeR from './components/HomeRishma';
-import UpdateBooking from './components/UpdateBooking';
+import updateBooking from './components/updatebooking';
 import fandQ from './components/HelpAndFAQ';
 import BookingReport from './components/BookingReport';
 
@@ -100,7 +100,7 @@ function App() {
         <Route path="/homeRishma" exact component = {HomeR}/>
           <Route path="/addRishma" exact component = {BookingForm}/>
           <Route path="/allBooking" exact component = {Allbookings}/>
-          <Router path="/edit-booking/:id" exact component ={UpdateBooking}/>
+          <Route path="/edit-booking/:id" exact component={updateBooking}/>
           <Route path ="/fandQ" exact component = {fandQ}/>
           <Route path = "/dis-booking/:id" component = {BookingReport}/>
       <Footer/>

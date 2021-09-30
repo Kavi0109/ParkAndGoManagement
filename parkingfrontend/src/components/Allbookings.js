@@ -47,43 +47,54 @@ export default class Allbookings extends Component {
 
 
   render() {
-    return (<div className="table-wrapper">
-      <br/>
-      <h2>All Booking Details</h2>
+    return (
+      <div className="table-wrapper">
+        <br/>
+        <h2>All Booking Details</h2>
 
-      
-      
 
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Booking ID</th>
-            <th>First name</th>
-            <th>Lastname</th>
-            <th>Contact number</th>
-            <th>Address</th>
-            <th>Plate Number</th>
-            <th>Vehicle Model</th>
-            <th>Entry Date</th>
-            <th>Exit Date</th>
-            <th>BusNo</th>
-            <th>BusRoute</th>
-            
-            <th>Delete</th>
-            <th>Booking Report</th>
+        
+        <div class="SearchPaddng">  
+          <form action="" class="searchForm">
+            <input class="searchTxt" type="text" placeholder="Search.." name="search" />
+            <button type="submit" className="searchBTN">Search</button>
+          </form>
+			  </div>
 
-          </tr>
-        </thead>
-        <tbody>
-          {this.DataTable()}
-        </tbody>
-      </Table>
+        
+        
 
-      <a href="/homeRishma">
-        <button className="Back">Back</button>
-      </a><br/><br/><br/>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>First name</th>
+              <th>Lastname</th>
+              <th>Contact number</th>
+              <th>Address</th>
+              <th>Plate Number</th>
+              <th>Vehicle Model</th>
+              <th>Entry Date</th>
+              <th>Exit Date</th>
+              <th>BusNo</th>
+              <th>BusRoute</th>
+              <th>Update</th>
+              <th>Delete</th>
+              <th>Booking Report</th>
 
-    </div>);
+            </tr>
+          </thead>
+          <tbody>
+            {this.DataTable()}
+          </tbody>
+        </Table>
+
+        <a href="/homeRishma">
+          <button className="Back">Back</button>
+        </a><br/><br/><br/>
+
+      </div>
+    );
   }
 }
 

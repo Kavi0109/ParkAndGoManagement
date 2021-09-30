@@ -12,6 +12,7 @@ import map from './Images/map.png'
 
 
 
+
 export default function AddBooking(){
 
     
@@ -34,10 +35,14 @@ export default function AddBooking(){
    
 
 
-
     function sendData(event){
         event.preventDefault();//prevent from refreshing the page, (default action that belongs to the event will not occur.)
         
+
+        
+
+
+
         const newBooking = {
             BookingID,
             Firstname,
@@ -56,13 +61,14 @@ export default function AddBooking(){
             SecurityCode
         }
 
+
         //send data to the backend using axios
 
         axios.post("/booking/addRishma",newBooking).then(()=>{
             
             alert("Booking Added")
 
-            //load the page again after deleting the record
+            //load the page again after inserting the record
             window.setTimeout(function(){
                 window.location.href="/addRishma";
             }, 1000);
@@ -73,6 +79,11 @@ export default function AddBooking(){
 
 
     }
+
+
+    
+
+
 
     //Disable past dates
     const yesterday = moment().subtract(1, 'day');
@@ -187,7 +198,7 @@ export default function AddBooking(){
 
 
 
-                    <form onSubmit={sendData}>
+                    <form onSubmit={sendData} id="form">
 
                         <br />
                         <h2>YOUR PARKING DETAILS</h2>
@@ -204,6 +215,7 @@ export default function AddBooking(){
                                     type="text"
                                     className="form-control"
                                     id="BookingID"
+                                    pattern="B[0-9]{3}"
                                     placeholder="B001"
                                     onChange={(event) => {
                                         setBookingID(event.target.value);
@@ -229,7 +241,11 @@ export default function AddBooking(){
                                         setFirstname(event.target.value);
                                     } }
                                     required />
+
+                                
                             </div>
+                           
+
                         </div>
 
                         <br />
@@ -249,7 +265,11 @@ export default function AddBooking(){
                                         setLastname(event.target.value);
                                     } }
                                     required />
+
                             </div>
+
+
+                            
                         </div>
 
 
@@ -264,11 +284,15 @@ export default function AddBooking(){
                                     type="text"
                                     className="form-control"
                                     id="Contactnumber"
+                                    pattern="[0-9]{10}"
                                     placeholder="0123456789"
                                     onChange={(event) => {
                                         setContactnumber(event.target.value);
                                     } }
-                                    required maxlength="10" />
+                                    required maxLength="10"/>
+
+
+                                
                             </div>
                         </div>
 
@@ -308,6 +332,7 @@ export default function AddBooking(){
                                     type="text"
                                     className="form-control"
                                     id="PlateNumber"
+                                    pattern="[A-Z]-[0-9]{4}"
                                     placeholder="DSA-1122"
                                     onChange={(event) => {
                                         setPlateNumber(event.target.value);
@@ -378,9 +403,10 @@ export default function AddBooking(){
 
                             <div class="col-sm-10">
                                 <input
-                                    type="text"
+                                    type="number"
                                     className="form-control"
                                     id="BusNo"
+                                    pattern="[0-9]{3}"
                                     placeholder="190"
                                     onChange={(event) => {
                                         setBusNo(event.target.value);
@@ -426,11 +452,14 @@ export default function AddBooking(){
                                     type="text"
                                     className="form-control"
                                     id="CardNo"
+                                    pattern="[0-9]{10}"
                                     placeholder="0123456789"
                                     onChange={(event) => {
                                         setCardNo(event.target.value);
                                     } }
                                     required maxlength="10" />
+
+                                
                             </div>
                         </div>
 
@@ -476,11 +505,12 @@ export default function AddBooking(){
                                     type="text"
                                     className="form-control"
                                     id="SecurityCode"
+                                    pattern="[0-9]{4}"
                                     placeholder="1234"
                                     onChange={(event) => {
                                         setSecurityCode(event.target.value);
-                                    } }
-                                    required maxlength="4" />
+                                    }}
+                                    required/>
                             </div>
                         </div>
 

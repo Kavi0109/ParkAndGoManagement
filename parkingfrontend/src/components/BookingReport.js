@@ -71,11 +71,11 @@ export default class BookingReport extends Component {
             
                 <div class="slip1">
                     
-                    <center><div class="hd"><h4>PARK AND GO <br/>COLOMBO<br/>WESTERN PROVINCE</h4></div></center>
-                    <center><h6 style={{color:"grey"}}>Parking Slot Booking</h6></center>
+                    <center><br/><br/><div class="hd"><h3>PARK AND GO <br/>COLOMBO<br/>WESTERN PROVINCE</h3></div></center>
+                    <center><h5 style={{color:"grey"}}>Parking Slot Booking</h5></center>
     
                     <br/>
-                    <div class ="slip">    
+                    <div className ="slip" style={{backgroundColor:"#ff869a73"}}>    
                             <div class="row">
                                 <div style={{width:"18%"}}> 
                                     <label for="id" class="m">BookingID</label>
@@ -249,7 +249,13 @@ export default class BookingReport extends Component {
             <center>
                 <button onClick={this.print} className="Bookingslipbtn">
                     Print Booking slip
-                </button>
+                </button><br></br>
+
+                <a href="/allBooking">
+                    <button className="Back">
+                        Back
+                    </button>
+                </a>
             </center>
 
             <br/><br/><br/>

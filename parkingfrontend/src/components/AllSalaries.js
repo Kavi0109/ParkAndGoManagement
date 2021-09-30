@@ -37,13 +37,13 @@ export default class AllSalaries extends Component {
     return (
     <div id="rep1"><center>
         <div className="table-wrapper"> 
-           <h5> Salary Report</h5><hr/>
-           <div class="SearchPaddng">  
-				<form action="" class="searchForm">
-				<input class="searchTxt" type="text" placeholder="Search.." name="search" />
-				<button type="submit" class="searchBT">Search</button>
-				</form>
-			</div>
+          <h5> Salary Report</h5><hr/>
+          <div class="SearchPaddng">  
+            <form action="" class="searchForm">
+              <input class="searchTxt" type="text" placeholder="Search.." name="search" />
+              <button type="submit" class="searchBT">Search</button>
+            </form>
+			    </div>
           
           <Table striped bordered hover>
             <thead>
