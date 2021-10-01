@@ -115,7 +115,7 @@ export default class updateparking extends Component{
           <form onSubmit={this.onSubmit} style={{marginTop:100}}>
             <div className="form-group">
                 <label htmlFor="Option">Car Parking Type:</label><br/>
-                <input type="text" className="form-control" value={this.state.Option} onChange={this.onChangeOption} />
+                <input type="text" className="form-control" value={this.state.Option} onChange={this.onChangeOption} readOnly/>
                 </div>
                 <br/>
             <div className="form-group">
@@ -135,12 +135,12 @@ export default class updateparking extends Component{
             <br/>
             <div className="form-group">
                     <label htmlFor="rno">Customer Registration ID:</label>
-              <input type="text" className="form-control" value={this.state.rno} onChange={this.onChangerno} />
+              <input type="text" pattern="[A-Z]{1}[0-9]{4}" className="form-control" value={this.state.rno} onChange={this.onChangerno} />
             </div>
             <br/>
             <div className="form-group">
                     <label htmlFor="dt">Entry Date:</label>
-                    <input type="text" className="form-control" value={this.state.dt} onChange={this.onChangedt} />
+                    <input type="text" className="form-control" value={this.state.dt} onChange={this.onChangedt} readOnly/>
             </div>
             <br/>
             <div className="form-group">

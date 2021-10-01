@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './carparking.jpg';
 import floor1 from './floor1.png';
 
+
+
 const tablestyle = {
     width:'50%',
     height:'25%',
@@ -30,16 +32,16 @@ const textedit={
 }
 
 function Tableintro(){
+ 
+    
     
     return(
-        
 
+        <div>
+            
 
-<div class="container " style={{marginTop:100}}>
-<button type="submit" className="btn btn-primary">
-              Back To Bookings
-            </button>
-            <br></br><br></br>
+<div class="container " style={{marginTop:20}}>
+
     <table class="table product-table table-striped table-bordered table-hover table-condensed">
         <thead>
             <tr>
@@ -112,7 +114,8 @@ function Tableintro(){
               Continue
             </button>
             <br></br><br></br>
-</div>
+</div></div>
+        
  
     )
 }

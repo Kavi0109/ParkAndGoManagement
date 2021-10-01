@@ -9,6 +9,11 @@ import Slider from './components/slider';
 import Insertparking from './components/Insertparking';
 import showParking from './components/showparking';
 import updateparking from './components/updateparking';
+import chooseReport from './components/chooseReport';
+import calculate from './components/calculateSlots';
+import Search from './components/Search';
+
+
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Menu from './components/menu.js';
 import Menubar from './components/menu2';
@@ -52,10 +57,14 @@ import Bus from './components/Bus';
 import AddingBus from './components/AddingBus.js';
 
 
+
 function App() {
   const dispatch = useDispatch()
   const token = useSelector(state => state.token)
   const auth = useSelector(state => state.auth)
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const searchHandler = () => {};
 
   useEffect(() => {
     const firstLogin = localStorage.getItem('firstLogin')
@@ -97,7 +106,7 @@ function App() {
     <div>
       <Menubar/>
       <Body/>
-      <Route path="/HomeMain" exact component={HomeMain}/>
+     <Route path="/HomeMain" exact component={HomeMain}/>
       <Route path="/aboutus" exact component={Aboutus}/>
       <Route path="/contactus" exact component={Contactus}/>
       <Route path="/gallery" exact component={Gallery}/>
@@ -108,7 +117,11 @@ function App() {
       <Route path="/second" exact component={Slottablesecond}/>
       <Route path="/basement" exact component={Slottablebasement}/>
       <Route path="/outer" exact component={Slottableouter}/>
-      <Route path="/retrieve" exact component={showParking}/>
+      <Route path="/choose" exact component={chooseReport}/>
+      <Route path="/calculate" exact component={calculate}/>
+      <Route path="/retrieve" exact component={showParking}
+       term={searchTerm}
+       searchKeyword = {searchHandler}/>
       <Route path="/getp/:id" exact component={updateparking}/>
       <Route path="/bet/:id" component={Payslip} /> 
         <Route exact path="/l" component = {AllLeaves} />

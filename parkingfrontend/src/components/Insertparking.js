@@ -4,7 +4,17 @@ import DatePicker from 'react-datetime';
 import moment from 'moment';
 import 'react-datetime/css/react-datetime.css';
 import {Link} from 'react-router-dom';
+import gal1 from './gal1.jpg';
+import gal2 from './gal2.jpg';
+import gal3 from './gal3.jpg';
+import gal4 from './gal4.jpg';
+import gal5 from './gal5.jpg';
+import gal6 from './gal6.jpg';
 //import Select from 'react-select';
+
+const colour ={
+    color:"white"
+}
 
 
 function Insertparking(){   
@@ -122,7 +132,7 @@ function Insertparking(){
 
 
     return(
-        <div className="p-3 mb-2 bg-info text-dark">
+        <div className="p-3 mb-2  text-dark">
         <div className="container ">
             <br></br>
             <div >
@@ -134,21 +144,38 @@ function Insertparking(){
         <Link to="/addp" className="navbar-brand">Add New Slot</Link>
         </div>
         <div className="container">
-        <Link to="/retrieve" className="navbar-brand">Reports</Link>
+        <Link to="/choose" className="navbar-brand">Reports</Link>
         </div>
         </nav>
+        </div>      
         </div>
-        <br></br>
-            <div className="container p-3 mb-2 bg-light text-dark " ><center>
-            <h4 style={{marginTop:20}}><b><center>Add New Parking Slot</center></b></h4></center>
+        <section class="vh-80 ">
+  <div class="container py-5 h-80">
+    <div class="row d-flex justify-content-center align-items-center h-80">
+      <div class="col col-xl-100">
+        <div class="card rounded" >
+          <div class="row g-0">
+            <div class=" col-lg-5 d-none d-md-block">
+              <img
+                style={{marginTop:90}}
+                src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/img1.jpg"
+                alt="login form"
+                class="img-fluid"
+              />
             </div>
-            
-            <form onSubmit={sendData}  className="container p-3 mb-2 bg-light text-dark "><br></br><br></br>
+            <div class="col  d-flex align-items-center">
+              <div class="card-body text-black">
 
-                <div class="row">
-                    <label htmlFor="Option" class="col-sm-2 col-form-label">Car Parking Type:</label>
+                <form onSubmit={sendData}  className="container p-3 bg-light text-dark rounded"><br></br><br></br>
+
+                  <div class="d-flex">
+                    <center><span class="h1 fw-bold mb-0">Reserve Your Slot</span></center>
+                  </div>
+
+                  <div class="row">
+                    <label htmlFor="Option" class=" col-form-label">Car Parking Type:</label>
                     <div class="col-sm-10">
-                    <input type="text" className="form-control" id="Option" placeholder="Enter your car parking type.."
+                    <input type="text" className="form-control " id="Option" placeholder="Enter your car parking type.."
                     required
                     onChange={(event)=>{
                         setOption(event.target.value);
@@ -156,10 +183,10 @@ function Insertparking(){
                     </div>
 
 
-                </div><br></br>
+                </div>
 
                 <div class="row">
-                    <label htmlFor="sno" class="col-sm-2 col-form-label"> Parking Slot No:</label>
+                    <label htmlFor="sno" class=" col-form-label"> Parking Slot No:</label>
                     <div class="col-sm-10">
                     <input type="number" className="form-control" name="sno" id="sno" min="0" max="100" maxLength="3" placeholder="Enter Slot No between 1-100.."
                     required
@@ -168,30 +195,30 @@ function Insertparking(){
                     onChange={(event)=>{
                         setSlot_no(event.target.value);
                     }} /></div>
-                </div><br></br>
+                </div>
 
                 <div class="row">
-                    <label htmlFor="ssize" class="col-sm-2 col-form-label">Slot Size (in inches):</label>
+                    <label htmlFor="ssize" class="col-form-label">Slot Size (in inches):</label>
                     <div class="col-sm-10">
                     <input type="number" className="form-control" id="ssize" placeholder="Enter slot size.."
                     required
                     onChange={(event)=>{
                         setSlot_size(event.target.value);
                     }} /></div>
-                </div><br></br>
+                </div>
 
                 <div class="row">
-                    <label htmlFor="cno" class="col-sm-2 col-form-label">Car Plate No:</label>
+                    <label htmlFor="cno" class=" col-form-label">Car Plate No:</label>
                     <div class="col-sm-10">
                     <input type="text" className="form-control" id="cno" placeholder="Enter your car plate no.."
                     required
                     onChange={(event)=>{
                         setCar_no(event.target.value);
                     }} /></div>
-                </div><br></br>
+                </div>
 
                 <div class="row">
-                    <label htmlFor="rno" class="col-sm-2 col-form-label">Registration ID:</label>
+                    <label htmlFor="rno" class=" col-form-label">Registration ID:</label>
                     <div class="col-sm-10">
                     <input type="text" className="form-control" id="rno" placeholder="Enter your registration ID.."
                     required
@@ -199,40 +226,49 @@ function Insertparking(){
                     onChange={(event)=>{
                         setReg_no(event.target.value);
                     }} /></div>
-                </div><br></br>
+                </div>
 
                 <div class="row">
-                    <label htmlFor="dt" class="col-sm-2 col-form-label">Entry Date:</label>
+                    <label htmlFor="dt" class=" col-form-label">Entry Date:</label>
                     <div class="col-sm-10">
                     <DatePicker
                         isValidDate={disablePastDt}
                         value={dt}
                         onChange={val => setDt(val)}
                     />     </div>               
-                </div><br></br>
+                </div>
 
                 
 
                 <div class="row">
-                    <label htmlFor="des" class="col-sm-2 col-form-label ">Description:</label>
+                    <label htmlFor="des" class=" col-form-label ">Description:</label>
                     <div class="col-sm-10">
                     <input type="text" className="form-control" id="des" placeholder="Enter Description.."
                     required
                     onChange={(event)=>{
                         setDescription(event.target.value);
                     }} /></div>
-                </div><br></br>
+                </div><br/>
 
                 <div class="d-grid gap-2">
                 <button type="submit" className="btn btn-primary">Save Parking</button>
                 </div>
-                <br></br>
+                        <br></br>
+                <div class="d-grid gap-2">
+                <button  type="submit" className="btn btn-primary"><a href="/show" style={colour} >Back To Parking</a></button>
+                </div>
+                
+               
+                </form>
 
-
-
-            </form>
-
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
         </div>
 
     )
