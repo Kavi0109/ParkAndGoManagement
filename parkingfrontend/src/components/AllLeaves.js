@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
-
+import {Link} from 'react-router-dom';
 import GetLeave from './GetLeave';
 
 
@@ -35,23 +35,25 @@ export default class AllLeaves extends Component {
 
   render() {
     return (
-    
+      <div>
+       <div id="home">  
     <div className="table-wrapper">
-     <div id="home">
-     <center> <h5> Leave Report</h5></center><hr/>
-     <div class="SearchPadding">  
-				<form action="" class="searchForm">
-				<input class="searchTxt" type="text" placeholder="Search.." name="search" />
-				<button type="submit" class="searchBT">Search</button>
-				</form>
-			</div>
+    
+     <center> <h5 style={{color:"#1b7ced"}}> Leave Report</h5></center><hr/>
+     <div class="SearchPadding" style={{marginLeft:"100px"}}> 
+        <form action="" class="searchForm">
+        <input class="searchTxt" type="text" placeholder="Search.." name="search" />
+        <button type="submit" class="searchBT">Search</button>
+        </form> <br/> <br/>
+      </div>
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Roll No</th>
-            <th>Action</th>
+            <th>Employee No</th>
+            <th>From Date</th>
+            <th>No Of Days</th>
+            <th>Reason</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -59,6 +61,8 @@ export default class AllLeaves extends Component {
         </tbody>
       </Table>
       </div>
+    </div>
+    
     </div>
     
     );

@@ -1,28 +1,13 @@
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-
 body {
   font-family: roboto, sans-serif;
   background-color:white;
-  /* background-image: url("./car7.jpg"); */
  background-repeat:repeat;
  background-attachment: fixed;
  background-size: 100%; 
     
-}
+} 
 
-h5{
-    color: black;
-}
-h6{
-  color: #1b7ced;
-  font-weight: bold;
-}
+
 #netpay{
   margin-right:500px;
   
@@ -33,7 +18,7 @@ h6{
 #formStyle1  input[type= date],
 #formStyle1  input[type= number]{
     width: 50%;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 #formStyle1 textarea{
     width: 50%;
@@ -47,7 +32,7 @@ h6{
 
 #formStyle1{
   border: 3px solid #656b6e ;
-	padding:40px;
+  padding:40px;
     margin:90px;
     background-color: white;
     border-radius: 18px;
@@ -82,8 +67,8 @@ h6{
 }
 #formStyle2{
   border: 3px solid #656b6e ;
-	padding:10px;
-    margin:270px;
+  padding:10px;
+    margin:100px 240px;
     background-color: white;
     border-radius: 18px;
     box-shadow:1px 1px 2px black, 0 0 25px black, 0 0 5px black; 
@@ -148,10 +133,7 @@ h6{
         
       }
 
-      hr{
-        background-color:#665f5f;
-        
-      }
+  
       .calculator-grid > button:hover {
         background-color: rgba(255, 255, 255, .9);
       }
@@ -181,6 +163,3 @@ h6{
         color: white;
         font-size: 2rem;
       }
-
-
-      

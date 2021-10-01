@@ -41,7 +41,6 @@ import BookingForm from './components/BookingForm.js';
 import Allbookings from './components/Allbookings';
 import HeaderRishma from './components/HeaderRishma';
 import HomeR from './components/HomeRishma';
-import UpdateBooking from './components/UpdateBooking';
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -55,6 +54,9 @@ import HomeMain from './components/HomeMain';
 import Transportation from './components/Transportation';
 import Bus from './components/Bus';
 import AddingBus from './components/AddingBus.js';
+import updateBooking from './components/updatebooking';
+import BookingReport from './components/BookingReport';
+import fandQ from './components/HelpAndFAQ';
 
 
 
@@ -135,7 +137,9 @@ function App() {
         <Route path="/homeRishma" exact component = {HomeR}/>
           <Route path="/addRishma" exact component = {BookingForm}/>
           <Route path="/allBooking" exact component = {Allbookings}/>
-          <Router path="/edit-booking/:id" exact component ={UpdateBooking}/>
+          <Route path="/edit-booking/:id" exact component={updateBooking}/>
+          <Route path = "/dis-booking/:id" component = {BookingReport}/>
+          <Route path ="/fandQ" exact component = {fandQ}/>
           <Switch>
           {/* Employee Routes */}
           <Route path="/homeKasuni" exact component={EmployeeHome} />

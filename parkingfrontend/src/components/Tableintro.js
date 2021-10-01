@@ -109,10 +109,6 @@ function Tableintro(){
         </tbody>
 
     </table>
-    <br></br><br></br>
-    <button type="submit" className="btn btn-primary">
-              Continue
-            </button>
             <br></br><br></br>
 </div></div>
         

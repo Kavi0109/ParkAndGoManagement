@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -15,6 +14,9 @@ export default class GetSalary extends Component {
         axios.delete('/salary/delete/' + this.props.obj._id)
             .then((res) => {
                 alert('Salary successfully deleted!')
+                window.setTimeout(function () {
+                    window.location.href = "/";
+                  }, 1000);
                
             }).catch((error) => {
                 console.log(error)
@@ -41,11 +43,13 @@ export default class GetSalary extends Component {
                         Payslip
                     </Link>
 
-                    <Button onClick={this.deleteSalary} size="sm" variant="danger">Delete</Button>
-
+                  
                     <Link className="edit-link" to={"/get/" + this.props.obj._id}>
                         Edit
                     </Link>
+
+                    <Button onClick={this.deleteSalary} size="sm" variant="danger">Delete</Button>
+
 
                     
 
@@ -55,4 +59,3 @@ export default class GetSalary extends Component {
         );
     }
 }
-

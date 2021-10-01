@@ -1,6 +1,5 @@
-
 .Submitbtn{
-    background-color: #008CBA;
+    background-color: #9489be;
     border: none;
     width: 100%;
     color: white;
@@ -13,11 +12,28 @@
     cursor: pointer;
 }
 
-
 .Updatebtn{
-    background-color: #008CBA;
+    background-color: #9489be;
     border: none;
     width: 100px;
+    color: white;
+    padding: 10px 32px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+
+
+.Updatepagebtn{
+    background-color: #9489be;
+    border: none;
+    width: 1300px;
     color: white;
     padding: 10px 32px;
     padding-right: 30px;
@@ -31,9 +47,9 @@
 }
 
 .Deletebtn{
-    background-color: #008CBA;
+    background-color: #9489be;
     border: none;
-    width: 100px;
+    width: 95px;
     color: white;
     padding: 10px 23px ;
     padding-right: 30px;
@@ -46,8 +62,18 @@
     border-radius: 8px;
 }
 
+
+
+.Deletebtn:hover{
+    background-color:#2c2a36;
+    color: white;
+}
+
+
+
+
 .GoBack{
-    background-color: #008CBA;
+    background-color: #9489be;
     border: none;
     width: 100%;
     color: white;
@@ -58,11 +84,56 @@
     font-size: 18px;
     margin: 4px 2px;
     cursor: pointer;
-    
+
 }
 
+.Back{
+    background-color: #9489be;
+    border: none;
+    width: 250px;
+    color: white;
+    padding: 10px 32px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+
+
+
+.DownloadBtn{
+    background-color: #9489be;
+    border: none;
+    width: 275px;
+    color: white;
+    padding: 10px 32px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    margin-right: 25px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+
+.Back:hover{
+    background-color:#2c2a36;
+    color: white;
+}
+
+
+
 .HomeBookingbtn{
-    background-color: #008CBA;
+    background-color: #9489be;
     border: none;
     width: 500px;
     color: white;
@@ -78,7 +149,8 @@
 }
 
 .HomeBookingDetailsbtn{
-    background-color: #008CBA;
+
+    background-color: #9489be;
     border: none;
     width: 500px;
     color: white;
@@ -91,4 +163,124 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 8px;
+}
+
+
+
+.rishmaDescription{
+    width: 100%;
+    padding: 100px;
+    border: 5px solid #9489be;
+    margin: 0;
+    outline-color: invert;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #9489be
+
+}
+
+.rishdecor{
+    padding: 100px;
+}
+
+
+
+.rishmaDescriptionpara{
+    width: 50%;
+    border: 5px solid #9489be;
+    margin: 0;
+}
+
+
+
+.rishmaDescriptionimage{
+    width: 100%;
+}
+
+.homerishGridbtn{
+    background-color: #9489be;
+    border: none;
+    width: 275px;
+    color: white;
+    padding: 10px 32px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+
+.bookingslipbtn{
+    background-color: #9489be;
+    border: none;
+    width: 190px;
+    color: white;
+    padding: 10px 32px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+
+.bookingslipbtn:hover{
+    background-color:#2c2a36;
+    color: white;
+
+}
+
+.Bookingslipbtn{
+    background-color: #9489be;
+    border: none;
+    width: 250px;
+    color: white;
+    padding: 10px 32px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+
+.Bookingslipbtn:hover {
+    background-color:#2c2a36;
+    cursor: pointer;
+}
+
+
+
+.searchBTN{
+    background-color: #9489be;
+    border: none;
+    width: 150px;
+    color: white;
+    padding: 10px 32px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+
+
+.searchBTN:hover {
+    background-color:#2c2a36;
+    cursor: pointer;
+
 }

@@ -19,6 +19,12 @@ export default class getBooking extends Component {
         axios.delete('/booking/delete-booking/' + this.props.obj._id)
             .then((res) => {
                 alert('Booking successfully deleted!')
+
+                //load the page again after deleting the record
+                window.setTimeout(function(){
+                    window.location.href="/allBooking";
+                }, 1000);
+
             }).catch((error) => {
                 console.log(error)
             })
@@ -30,7 +36,8 @@ export default class getBooking extends Component {
         return (
             <tr>
                 <td>{this.props.obj.BookingID}</td>
-                <td>{this.props.obj.Firstname}</td>   
+                <td>{this.props.obj.Firstname}</td>  
+                <td>{this.props.obj.Lastname}</td>
                 <td>{this.props.obj.Contactnumber}</td>
                 <td>{this.props.obj.Address}</td>
                 <td>{this.props.obj.PlateNumber}</td>
@@ -39,17 +46,41 @@ export default class getBooking extends Component {
                 <td>{this.props.obj.ExitDate}</td>
                 <td>{this.props.obj.BusNo}</td>
                 <td>{this.props.obj.BusRoute}</td>
-               
-
+                
+                
+                
                 <td>
-                    <Link className="edit-link" to={"./edit-booking/" + this.props.obj._id}>
+                    <Link to={"/edit-booking/" + this.props.obj._id}>
                         <button className="Updatebtn">Edit</button>
                     </Link>
                 </td>
 
                 
                 <td><Button onClick={this.deleteBooking} size="sm" variant="danger" className="Deletebtn" >Delete</Button></td>
+
+                <td>
+                <Link className="bookingslipbtn" to={"/dis-booking/" + this.props.obj._id}>
+                    Booking Slip
+                </Link>
+                </td>
+
             </tr>
         );
     }
 }
+
+/*  <td>
+    <Link to={"/edit-booking/" + this.props.obj._id}>
+        <button className="Updatebtn">Edit</button>
+    </Link>
+    </td>
+
+
+
+
+
+    <td>{this.props.obj.CardNo}</td>
+    <td>{this.props.obj.CardHolderName}</td>
+    <td>{this.props.obj.ExpireDate}</td>
+    <td>{this.props.obj.SecurityCode}</td>
+*/
