@@ -5,6 +5,7 @@ import axios from 'axios';
 import './salary.css';
 import Calc from './Calculator';
 import park3 from './Images/sal3.jpg';
+import {Link} from 'react-router-dom';
 
 export default class AddSalary extends Component {
 
@@ -24,6 +25,7 @@ export default class AddSalary extends Component {
     this.onChangetotDeduction = this.onChangetotDeduction.bind(this);
     this.onChangenetPay = this.onChangenetPay.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    
    
 
     // Setting up state
@@ -47,13 +49,15 @@ export default class AddSalary extends Component {
 
   checknetpay() {
     var ded = document.getElementById('totDeduction').value;
-    var pay = document.getElementById('basicPay').value ;
+    var pay = parseInt(document.getElementById('basicPay').value) ;
+    var bonus = parseInt(document.getElementById('allowance').value);
+    var totpay = pay + bonus;
     var net =  document.getElementById('netPay').value;
-    return ((pay - ded) == net) ;
+    return ((totpay - ded) == net) ;
     
     
   }
- 
+  
   onChangeemployeeNo(e) {
     this.setState({ employeeNo: e.target.value })
   }
@@ -96,6 +100,7 @@ export default class AddSalary extends Component {
   }
 
 
+
   onSubmit(e) {
     e.preventDefault()
     if(!this.checknetpay()){
@@ -136,11 +141,12 @@ export default class AddSalary extends Component {
   
         <div id="formStyle1">
 
-          <h5>ADD EMPLOYEE SALARY</h5>
+
+          <h5 style={{color:"#1b7ced"}}>ADD EMPLOYEE SALARY</h5>
             <hr/>
 
             <div class="nano">
-            <br/><center><h5>  Generate Salary</h5></center>
+            <br/><center><h5 style={{color:"#1b7ced"}}>  Generate Salary</h5></center>
             <div class="calculator-grid">
                
                 <div class="output">
@@ -168,47 +174,57 @@ export default class AddSalary extends Component {
             </div>
            <center><img src={park3} width="400" height="450" alt="..."></img></center><br/>
           </div>
+
+         
         <form onSubmit={this.onSubmit}>
 
                 <div className="form-group">
-
+             
                   <label for="employeeNo" >Emaployee No</label>
 
 						
-                    <input type="text" className="form-control" pattern="E[0-9]{3}" id="employeeNo" placeholder="enter employeeNo starting with E and 3 digits" required 
-                onChange={this.onChangeemployeeNo}/>
-
+                    <input type="text" className="form-control" pattern="E[0-9]{3}" name="employeeNo" id="employeeNo" placeholder="enter employeeNo starting with E and 3 digits" 
+                    onChange={this.onChangeemployeeNo}/> 
+                   
+              
                 </div>
 
                 <div className="form-group">
                     <label for="salaryMonth" >Salary Month</label>
-                    <input type="month" className="form-control" id="salaryMonth"  placeholder="enter salary month" required onChange={this.onChangesalaryMonth}/>
+                    <input type="month" className="form-control" id="salaryMonth"  placeholder="enter salary month" required
+                    onChange={this.onChangesalaryMonth}/>
                 </div>
 
-                <div className="form-group">
+                {/* <div className="form-group">
                     <label for="workingDays" >Working Days</label>
-                    <input type="number" className="form-control" min="0" max="30" required id="workingDays" placeholder="enter working days" 
+                    <input type="number" className="form-control" min="0" max="30" id="workingDays" placeholder="enter working days" required
                     onChange={this.onChangeworkingDays}/>
                     
-                </div>
+                </div> */}
                  <div className="form-group">
                     <label for="basicPay" >Basic Pay</label>
-                    <input type="number" className="form-control" id="basicPay" required placeholder="enter basicPay"
+                    <input type="number" className="form-control" id="basicPay" placeholder="enter basicPay" required 
                     onChange={this.onChangebasicPay}/>
 
                 </div>
 
                 <div className="form-group">
                     <label for="allowance" >Allowances</label>
-                    <input type="number" className="form-control" required id="allowance" placeholder="enter Allowances"
+                    <input type="number" className="form-control" id="allowance" required
                     onChange={this.onChangeallowance} />
         
                 </div>
+                  <br/>
 
-                <br/><br/>
+                <h5 style={{color:"#1b7ced"}}>SALARY DEDUCTIONS</h5>
+                <hr/>
 
-                <h5>SALARY DEDUCTIONS</h5>
-                <hr></hr>
+                <div className="form-group">
+                    <label for="workingDays" >Working Days</label>
+                    <input type="number" className="form-control" min="0" max="30" id="workingDays" placeholder="enter working days" required
+                    onChange={this.onChangeworkingDays}/>
+                    
+                </div>
 
                 <div className="form-group">
                     <label for="deduction" >Leave Deductions</label>
@@ -225,7 +241,7 @@ export default class AddSalary extends Component {
 
                 <div className="form-group">
                     <label for="salaryNote" >Salary Note</label>
-                    <textarea id="salaryNote" className="form-control" rows="5" columns="20"  required placeholder="note.."
+                    <textarea id="salaryNote" className="form-control" rows="5" columns="20"  maxLength="10" required placeholder="note.."
                     onChange={this.onChangesalaryNote}/>
     
                     </div>
@@ -235,7 +251,7 @@ export default class AddSalary extends Component {
                 <div className="form-group">
                 
                 <label for="totDeduction" >Total salary Deductions</label>
-                <input type="number" className="form-control" id="totDeduction" required
+                <input type="text" className="form-control" id="totDeduction" required
                     onChange={this.onChangetotDeduction}/>  
 
                 
@@ -249,35 +265,18 @@ export default class AddSalary extends Component {
                 
                
                 <br/><br/>    
-                <center><button type="submit" className="Btn5" style={{padding:"10px 40px"}}>Submit</button></center>
+                {/* <center><button type="submit" className="Btn5" style={{padding:"10px 40px"}}>Submit</button></center> */}
                
     
+                <button type="submit" className="Btn5" style={{padding:"8px 30px",marginRight:"20px"}}>Submit</button>
+                <Link className="Btn6" to="/home">
+                        Cancel
+                    </Link>
     </form>
    
     </div>
    
-    // <div className="form-wrapper">
-    //   <Form onSubmit={this.onSubmit}>
-    //     <Form.Group controlId="Name">
-    //       <Form.Label>employeeNo</Form.Label>
-    //       <Form.Control type="text"  onChange={this.onChangeemployeeNo} />
-    //     </Form.Group>
-
-    //     <Form.Group controlId="Email">
-    //       <Form.Label>salaryMonth</Form.Label>
-    //       <Form.Control class="kilo" type="text"  onChange={this.onChangesalaryMonth} />
-    //     </Form.Group>
-
-    //     <Form.Group controlId="Name2">
-    //       <Form.Label>workingDays</Form.Label>
-    //       <Form.Control type="text"  onChange={this.onChangeworkingDays} />
-    //     </Form.Group>
-    //     <br/>
-    //     <Button variant="danger" size="lg" block="block" type="submit">
-    //       Create Student
-    //     </Button>
-    //   </Form>
-    // </div>
+   
     
     );
   }

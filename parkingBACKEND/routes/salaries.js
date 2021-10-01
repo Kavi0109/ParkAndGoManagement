@@ -84,7 +84,7 @@ let Salary = require("../models/Salary");
 //     })
 // })
 
- // CREATE Student
+ // CREATE salary
  router.route('/add').post((req, res, next) => {
     Salary.create(req.body, (error, data) => {
       if (error) {
@@ -96,7 +96,7 @@ let Salary = require("../models/Salary");
     })
   });
 
-// READ Students
+// READ salary
 router.route('/').get((req, res) => {
     Salary.find((error, data) => {
       if (error) {
@@ -107,7 +107,7 @@ router.route('/').get((req, res) => {
     })
   })
   
-  // Get Single Student
+  // Get Single salary
   router.route('/get/:id').get((req, res) => {
     Salary.findById(req.params.id, (error, data) => {
       if (error) {
@@ -118,7 +118,7 @@ router.route('/').get((req, res) => {
     })
   })
 
-  // Get Single Student
+  // Get Single salary
   router.route('/bet/:id').get((req, res) => {
     Salary.findById(req.params.id, (error, data) => {
       if (error) {
@@ -129,7 +129,7 @@ router.route('/').get((req, res) => {
     })
   })
 
-  // Update Student
+  // Update salary
 router.route('/update/:id').put((req, res, next) => {
     Salary.findByIdAndUpdate(req.params.id, {
       $set: req.body
@@ -144,7 +144,7 @@ router.route('/update/:id').put((req, res, next) => {
     })
   })
 
-  // Delete Student
+  // Delete salary
 router.route('/delete/:id').delete((req, res, next) => {
     Salary.findByIdAndRemove(req.params.id, (error, data) => {
       if (error) {

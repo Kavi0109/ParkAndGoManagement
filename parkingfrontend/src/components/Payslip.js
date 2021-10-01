@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import jsPDF from 'jspdf';
+import "jspdf-autotable";
 
 
 export default class Payslip extends Component {
@@ -27,7 +29,21 @@ export default class Payslip extends Component {
     }
   }
 
-  
+//   handlePdf = () => {
+//     const input = document.getElementById('payslip');
+
+//     html2canvas(input)
+//         .then((canvas) => {
+//            // const imgData = canvas.toDataURL('image/png');
+//             const pdf = new jsPDF('p', 'px', 'a4');
+//             var width = pdf.internal.pageSize.getWidth();
+//             var height = pdf.internal.pageSize.getHeight();
+
+//            // pdf.addImage(imgData, 'JPEG', 0, 0, width, height);
+//             pdf.save("test.pdf");
+//         });
+// };
+
   print(){
     window.print();
   }
@@ -58,9 +74,9 @@ export default class Payslip extends Component {
     return(
       <div>
        
-            <div class="slip1">
+            <div class="slip1" id="payslip">
               <div class="logo2">  <img src={require('./Images/Blue.jpg').default }  width="200" height="150"/></div>
-       <center>      <div class="hd"><h6>PARK EXPRESS<br/>C6367<br/>COLOMBO<br/>WESTERN PROVINCE</h6></div></center>
+       <center>      <div class="hd"><h6 style={{color:"#1b7ced", fontWeight:"bold"}}>PARK EXPRESS<br/>C6367<br/>COLOMBO<br/>WESTERN PROVINCE</h6></div></center>
         <center>   <h6 style={{color:"grey"}}>Payslip for the period of August 2021</h6></center>
 
 		<br/>
@@ -246,7 +262,7 @@ export default class Payslip extends Component {
 
         
             </div>
-           
+            {/* <button onClick={this.handlePdf} className="slip-link">Download PDF</button><br/><br/> */}
             <center> <button onClick={this.print} class="Btn5">Print Payslip</button> 
 			<Link className="Btn6" to="/">
                         Cancel

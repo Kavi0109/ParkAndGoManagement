@@ -1,6 +1,6 @@
 import React from "react";
 import './home.css';
-
+import Slider from './slider';
 import car from './Images/car.jpg';
 import Slip from './homei';
 
@@ -12,8 +12,7 @@ export default function Home(){
 
 return(
 <div>
-
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+   <Slider/>
         <div id="home">
          {/* <center>   <h3 class="Htxt">EMPLOYEE SALARY ANAGEMENT</h3></center>
 		<hr/>   */}
@@ -118,7 +117,7 @@ return(
 	</div><br/>
 
 	</div>
-		</nav>		
+				
         </div>
     );
 	}

@@ -64,10 +64,9 @@ function App() {
   return (
     <Router>
     <div>
-      <Menu/>
-      <Slider/>
+     
       <Menubar/>
-      <Header/>
+   
       <Body/>
       <Route path="/aboutus" exact component={Aboutus}/>
       <Route path="/contactus" exact component={Contactus}/>

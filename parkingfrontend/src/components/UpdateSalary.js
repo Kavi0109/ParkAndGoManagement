@@ -67,9 +67,11 @@ export default class UpdateSalary extends Component {
 
   checknetpay() {
     var ded = document.getElementById('totDeduction').value;
-    var pay = document.getElementById('basicPay').value ;
+    var pay = parseInt(document.getElementById('basicPay').value) ;
+    var bonus = parseInt(document.getElementById('allowance').value);
+    var totpay = pay + bonus;
     var net =  document.getElementById('netPay').value;
-    return ((pay - ded) == net) ;
+    return ((totpay - ded) == net) ;
     
     
   }
@@ -161,11 +163,11 @@ export default class UpdateSalary extends Component {
     
        
       <div id="formStyle1"> 
-            <h5>UPDATE EMPLOYEE SALARY</h5>
+            <h5 style={{color:"#1b7ced"}}>UPDATE EMPLOYEE SALARY</h5>
             <hr></hr>  
 
             <div class="nano">
-            <br/><center><h5>  Generate Salary</h5></center>
+            <br/><center><h5 style={{color:"#1b7ced"}}>  Generate Salary</h5></center>
             <div class="calculator-grid">
                
                 <div class="output">
@@ -199,58 +201,65 @@ export default class UpdateSalary extends Component {
                 <div className="form-group">
                     <label for="employeeNo" >Emaployee No</label>
                     <input type="text" pattern="E[0-9]{3}" className="form-control" id="employeeNo" 
-                value={this.state.employeeNo} onChange={this.onChangeemployeeNo}/>
+                value={this.state.employeeNo} onChange={this.onChangeemployeeNo} required/>
 
                 </div>
 
                 <div className="form-group">
                     <label for="salaryMonth" >Salary Month</label>
                     <input type="text" className="form-control" id="salaryMonth" 
-                    value={this.state.salaryMonth} onChange={this.onChangesalaryMonth} />
+                    value={this.state.salaryMonth} onChange={this.onChangesalaryMonth} required />
                 </div>
 
-                <div className="form-group">
+                {/* <div className="form-group">
                     <label for="workingDays" >Working Days</label>
                     <input type="text" className="form-control" id="workingDays" 
-                    value={this.state.workingDays} onChange={this.onChangeworkingDays}/>
+                    value={this.state.workingDays} onChange={this.onChangeworkingDays} required/>
                     
-                </div>
+                </div> */}
                 <div className="form-group">
                     <label for="basicPay" >Basic Pay</label>
                     <input type="number" className="form-control" id="basicPay" 
-                    value={this.state.basicPay} onChange={this.onChangebasicPay}/>
+                    value={this.state.basicPay} onChange={this.onChangebasicPay} required/>
 
                 </div>
 
                 <div className="form-group">
                     <label for="allowance" >Allowances</label>
-                    <input type="number" className="form-control" id="allowance" 
-                    value={this.state.allowance} onChange={this.onChangeallowance}/>
+                    <input type="text" className="form-control" id="allowance" 
+                    value={this.state.allowance} onChange={this.onChangeallowance} required/>
 
                 </div>
 
-                <br/><br/>
+                <br/>
 
-                <h5>SALARY DEDUCTIONS</h5>
-                <hr></hr>
+                <h5 style={{color:"#1b7ced"}}>SALARY DEDUCTIONS</h5>
+                <hr/>
+
+                <div className="form-group">
+                    <label for="workingDays" >Working Days</label>
+                    <input type="number" className="form-control" min="0" max="30" id="workingDays" 
+                    value={this.state.workingDays} onChange={this.onChangeworkingDays} required/>
+                    
+                </div>
 
                 <div className="form-group">
                     <label for="deduction" >Leave Deductions</label>
                     <input type="number" className="form-control" id="deduction" 
-                    value={this.state.deduction} onChange={this.onChangededuction}/>
+                    value={this.state.deduction} onChange={this.onChangededuction} required/>
                 </div>
 
                 <div className="form-group">
                     <label for="monthTax" >Tax for Month</label>
                     <input type="number" className="form-control" id="monthTax" 
-                    value={this.state.monthTax} onChange={this.onChangemonthTax}/>
+                    value={this.state.monthTax} onChange={this.onChangemonthTax} required/>
 
                 </div>
 
                 <div className="form-group">
                     <label for="salaryNote" >Salary Note</label>
-                    <textarea id="salaryNote" className="form-control" rows="5" columns="20" 
-                    value={this.state.salaryNote} onChange={this.onChangesalaryNote}/>
+                    <textarea id="salaryNote" className="form-control" rows="5" columns="20" maxLength="10" 
+                    value={this.state.salaryNote} onChange={this.onChangesalaryNote} required/>
 
                     </div>
 
@@ -258,15 +267,15 @@ export default class UpdateSalary extends Component {
 
                 <div className="form-group">
                     <label for="totDeduction" >Total salary Deductions</label>
-                    <input type="number" className="form-control" id="totDeduction" placeholder="enter sum"
-                    value={this.state.totDeduction} onChange={this.onChangetotDeduction}/>
+                    <input type="text" className="form-control" id="totDeduction" placeholder="enter sum"
+                    value={this.state.totDeduction} onChange={this.onChangetotDeduction} required/>
 
                 </div>
             
                 <div className="form-group">
                     <label for="netPay" >Net Pay</label>
                     <input type="text" className="form-control" id="netPay"
-                    value={this.state.netPay} onChange={this.onChangenetPay}/>
+                    value={this.state.netPay} onChange={this.onChangenetPay} required/>
 
                 </div> 
             
