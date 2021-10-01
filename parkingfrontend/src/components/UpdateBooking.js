@@ -20,6 +20,8 @@ export default class updateBooking extends Component{
         this.onChangeBusRoute = this.onChangeBusRoute.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
+
+        //the variables that needs to be changed
         this.state = {
             BookingID:'',
             Firstname:'',
@@ -35,6 +37,8 @@ export default class updateBooking extends Component{
         }
     }
 
+
+    //get a single value and edit
     componentDidMount(){
         axios.get('/booking/edit-booking/' + this.props.match.params.id)
         .then(response=>{

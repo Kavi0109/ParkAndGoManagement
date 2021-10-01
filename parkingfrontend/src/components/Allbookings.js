@@ -5,6 +5,9 @@ import Table from 'react-bootstrap/Table';
 import Getbooking from './Getbooking';
 import Button from 'react-bootstrap/Button';
 import './btn.css'
+import jsPDF from 'jspdf';
+import logo from './B&W.png';
+import "jspdf-autotable"
 
 
 
@@ -18,6 +21,52 @@ export default class Allbookings extends Component {
       bookings: []
     };
   }
+
+
+
+
+
+
+  //Report download
+  exportPDF = () => {
+
+    const unit = "pt";
+    const size = "A4"; // Use A1, A2, A3 or A4
+    const orientation = "portrait"; // portrait or landscape
+
+    const marginLeft = 40;
+    const doc = new jsPDF(orientation, unit, size);
+
+    doc.setFontSize(15);
+
+    const title = "Slot Booking Report";
+    const title2="Monthly Slot Booking Report for Month of October 2021"
+    const headers = [["Booking ID", "First name","Contact number" ,"Plate Number", "Vehicle Model" , "Entry Date","BusNo","BusRoute"]];
+
+    const data = this.state.bookings.map(elt=> [elt.BookingID, elt.Firstname, elt.Contactnumber, elt.PlateNumber, elt.VehicleModel, elt.EntryDate, elt.BusNo, elt.BusRoute]);
+
+    let content = {
+
+      startY: 200,
+      head: headers,
+      body: data
+
+    };
+
+    doc.addImage(logo,'PNG',65,20,100,100)
+    doc.text(title, marginLeft,140);
+    doc.text(title2, marginLeft, 160);
+    doc.autoTable(content);
+    doc.save("Monthy Slot Booking Report.pdf")
+
+  }
+
+
+
+
+
+
+
 
 
   //retrieve data from database
@@ -48,9 +97,12 @@ export default class Allbookings extends Component {
 
   render() {
     return (
+
       <div className="table-wrapper">
         <br/><br/><br/><br/>
         <h2>All Booking Details</h2>
+
+        
 
         <br/><br/>
         
@@ -89,6 +141,8 @@ export default class Allbookings extends Component {
           </tbody>
         </Table>
 
+        <button onClick={() => this.exportPDF()} className="DownloadBtn">Download PDF</button>
+
         <a href="/homeRishma">
           <button className="Back">Back</button>
         </a><br/><br/><br/>
@@ -98,11 +152,3 @@ export default class Allbookings extends Component {
   }
 }
 
-/*
-<th>CardNo</th>
-<th>CardHolderName</th> 
-<th>ExpireDate</th>  
-<th>SecurityCode</th>
-<th>Update</th>
-
-*/

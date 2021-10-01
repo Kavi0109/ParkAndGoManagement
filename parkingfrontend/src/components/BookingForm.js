@@ -15,9 +15,9 @@ import map from './Images/map.png'
 
 export default function AddBooking(){
 
-    
+    //useState hook is used to pass the data which is taken from the form
     const [BookingID,setBookingID] = useState("");
-    const [Firstname,setFirstname] = useState("");// a Hook
+    const [Firstname,setFirstname] = useState("");
     const [Lastname,setLastname] = useState("");
     const [Contactnumber,setContactnumber] = useState("");
     const [Address,setAddress] = useState("");
@@ -73,7 +73,7 @@ export default function AddBooking(){
                 window.location.href="/addRishma";
             }, 1000);
 
-        }).catch((err)=>{
+        }).catch((err)=>{//if the data is not send properly an alert message will be shown
             alert(err)
         })
 
@@ -204,7 +204,7 @@ export default function AddBooking(){
                         <h2>YOUR PARKING DETAILS</h2>
                         <h6>Please fill in your details below for new parking slot booking</h6>
 
-                        <br /><br />
+                        <br />
 
 
                         <div class="row">
@@ -318,11 +318,9 @@ export default function AddBooking(){
 
 
 
-                        <br /><br /><br />
+                        <br />
 
                         <h3>Vehicle Details</h3>
-
-                        <br />
 
                         <div class="row">
                             <label htmlFor="PlateNumber" class="col-sm-2 col-form-label" for="PlateNumber">Licence Plate Number</label>
@@ -361,11 +359,11 @@ export default function AddBooking(){
                         </div>
 
 
-                        <br /><br /><br />
+                        <br />
 
                         <h3>Entry/Exit Date and Time Details</h3>
 
-                        <br />
+                        
 
                         <div class="row">
                             <label htmlFor="EntryDate" class="col-sm-2 col-form-label" for="EntryDate">Entry Date/Time</label>
@@ -374,7 +372,8 @@ export default function AddBooking(){
                                 <DatePicker
                                     isValidDate={disablePastDt}
                                     value={EntryDate}
-                                    onChange={val => setEntryDate(val)} />
+                                    onChange={val => setEntryDate(val)} 
+                                />
                             </div>
                         </div>
 
@@ -387,16 +386,17 @@ export default function AddBooking(){
                                 <DatePicker
                                     isValidDate={disablePastDt}
                                     value={ExitDate}
-                                    onChange={val => setExitDate(val)} />
+                                    onChange={val => setExitDate(val)} 
+                                />
                             </div>
                         </div>
 
-                        <br /><br />
+                        <br />
 
 
 
                         <h3>Shuttle Bus Tickets</h3>
-                        <br />
+                        
 
                         <div class="row">
                             <label htmlFor="BusNo" class="col-sm-2 col-form-label" for="BusNo">Bus Number</label>
@@ -437,12 +437,12 @@ export default function AddBooking(){
                         </div>
 
 
-                        <br /><br />
+                        <br />
 
 
                         <h3>Payment Details</h3>
 
-                        <br />
+                        
 
                         <div class="row">
                             <label htmlFor="CardNo" class="col-sm-2 col-form-label" for="CardNo">Card Number</label>
@@ -516,7 +516,7 @@ export default function AddBooking(){
 
 
 
-                        <br /><br /><br />
+                        <br />
 
 
 
