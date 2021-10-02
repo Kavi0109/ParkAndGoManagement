@@ -21,6 +21,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {dispatchLogin, fetchUser, dispatchGetUser} from './redux/actions/authAction'
 import Header from './components/header/Header'
 import Body from './components/body/Body'
+import HomeMain from './components/HomeMain';
 import axios from 'axios'
 import AllLeaves from './components/AllLeaves';
 import AddLeave from './components/AddLeave';
@@ -77,6 +78,7 @@ function App() {
       
       <Body/>
       <Route path="/aboutus" exact component={Aboutus}/>
+      <Route path="/HomeMain" exact component={HomeMain}/>
       <Route path="/contactus" exact component={Contactus}/>
       <Route path="/gallery" exact component={Gallery}/>
       <Route path="/projects" exact component={Ourprojects}/>

@@ -57,7 +57,7 @@ export default class Allbookings extends Component {
     doc.text(title, marginLeft,140);
     doc.text(title2, marginLeft, 160);
     doc.autoTable(content);
-    doc.save("Monthy Slot Booking Report.pdf")
+    doc.save("Monthy Parking Slot Booking Report.pdf")
 
   }
 

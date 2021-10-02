@@ -103,7 +103,7 @@
 .DownloadBtn{
     background-color: #9489be;
     border: none;
-    width: 250px;
+    width: 275px;
     color: white;
     padding: 10px 32px;
     padding-right: 30px;
@@ -112,6 +112,7 @@
     display: inline-block;
     font-size: 18px;
     margin: 4px 2px;
+    margin-right: 25px;
     cursor: pointer;
     border-radius: 8px;
 }
