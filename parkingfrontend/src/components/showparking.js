@@ -9,7 +9,6 @@ import logo from './B&W.png'
 
 
 
-
 export default class showparking extends Component{
     
     constructor(props){
@@ -78,9 +77,9 @@ export default class showparking extends Component{
 
                 <br></br>
             
-                <button onClick={() => this.exportPDF()} className="btn btn-primary">Download PDF</button>
+                <button onClick={() => this.exportPDF()} className="btn btn-primary" style={{float: 'right'}}>Download PDF</button>
                 
-                <h3 style={{marginTop:20}} align="center">Car Parking Report</h3>
+                <h3 style={{marginTop:20}} align="center">Allocated Slots Report</h3>
                 <table className="table table-striped table-bordered table-hover table-condensed" style={{marginTop:20}} id="mytable">
                     <thead class="table-primary">
                         <tr>
@@ -99,8 +98,8 @@ export default class showparking extends Component{
                     </tbody>
 
                 </table>
-                <a href="/choose">
-                <button className="btn btn-primary">Back To All Reports</button>
+                <a href="/show">
+                <button className="btn btn-primary">Back To Allot Parking</button>
                 </a>
                 <br/><br/>
             </div>

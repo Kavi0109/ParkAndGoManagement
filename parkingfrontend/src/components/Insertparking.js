@@ -144,7 +144,7 @@ function Insertparking(){
         <Link to="/addp" className="navbar-brand">Add New Slot</Link>
         </div>
         <div className="container">
-        <Link to="/choose" className="navbar-brand">Reports</Link>
+        <Link to="/retrieve" className="navbar-brand">Reports</Link>
         </div>
         </nav>
         </div>      
@@ -188,7 +188,7 @@ function Insertparking(){
                 <div class="row">
                     <label htmlFor="sno" class=" col-form-label"> Parking Slot No:</label>
                     <div class="col-sm-10">
-                    <input type="number" className="form-control" name="sno" id="sno" min="0" max="100" maxLength="3" placeholder="Enter Slot No between 1-100.."
+                    <input type="number" className="form-control" name="sno" id="sno" min="0" max="300" maxLength="3" placeholder="Enter Slot No between 1-300.."
                     required
                     maxValue={150}
                     minValue={0}
@@ -212,6 +212,7 @@ function Insertparking(){
                     <div class="col-sm-10">
                     <input type="text" className="form-control" id="cno" placeholder="Enter your car plate no.."
                     required
+                    pattern="[A-Z]{2}[-]{1}[0-9]{4}"
                     onChange={(event)=>{
                         setCar_no(event.target.value);
                     }} /></div>

@@ -31,18 +31,20 @@ const textedit={
     color:'black'
 }
 
+
+
 function Tableintro(){
- 
     
     
     return(
 
         <div>
             
+            <div class="container " style={{marginTop:20}}>
 
-<div class="container " style={{marginTop:20}}>
 
-    <table class="table product-table table-striped table-bordered table-hover table-condensed">
+
+    <table id="myTable" class="table product-table table-striped table-bordered table-hover table-condensed">
         <thead>
             <tr>
                 <th>Parking Slot Image</th>
