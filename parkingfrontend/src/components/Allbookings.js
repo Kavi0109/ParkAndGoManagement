@@ -39,7 +39,7 @@ export default class Allbookings extends Component {
 
     doc.setFontSize(15);
 
-    const title = "Slot Booking Report";
+    const title = "Parking Slot Booking Report";
     const title2="Monthly Slot Booking Report for Month of October 2021"
     const headers = [["Booking ID", "First name","Contact number" ,"Plate Number", "Vehicle Model" , "Entry Date","BusNo","BusRoute"]];
 
@@ -82,6 +82,7 @@ export default class Allbookings extends Component {
       })
   }
 
+  //data would be retrieve into a table by this datatable function
   DataTable() {
     return this.state.bookings.map(
       function(object,i) {
