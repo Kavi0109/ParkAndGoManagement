@@ -161,12 +161,7 @@ function Insertparking(){
                 alt="login form"
                 class="img-fluid"
               />
-              <br></br> <br></br> <br></br>
-                  <div class="d-grid gap-2">
-                  <a href='./search'>
-                <button type="submit" className="btn btn-primary">Search For Avalible Parking Slots</button></a>
-                </div>
-              
+                           
             </div>
             <div class="col  d-flex align-items-center">
               <div class="card-body text-black">

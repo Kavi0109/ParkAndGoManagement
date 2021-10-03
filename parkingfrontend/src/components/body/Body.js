@@ -16,7 +16,7 @@ function Body () {
     return (
         <section>
             <Switch>
-                <Route path = "/login" component = {isLogged ? NotFound : Login} exact/>
+                
                 
                 <Route path = "/forgot_password" component = {isLogged ? NotFound : ForgotPassword} exact/>
 

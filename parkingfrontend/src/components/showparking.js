@@ -67,26 +67,46 @@ export default class showparking extends Component{
             });
     }    
 
+    myFunction() {
+
+        var input, filter, table, tr, td, i, txtValue;
+    
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[4];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }       
+        }
+      }
+
     render(){
         return(
             <div className="container">
-                <br></br>
+                
 
-                <div style={{ marginLeft: 1090, marginTop: 30, border: 5 }}>
-                    <input
-                    type="text"
-                    placeholder="Search.."
-                    name="searchQuery"
-                    style={{ height: 40 }}
-                    />
-                </div>
-
+        <center><div class="SearchPaddng">  
+        <form action="btn btn-primary" class="searchForm">
+        <input class="searchTxt" type="text" placeholder="Search for Customer ID..." name="search" id="myInput"
+                    onKeyUp={this.myFunction}/>
+        <button type="submit" class="btn btn-primary">Search</button>
+    
+        </form>
+      </div></center>
                 
             
                 <button onClick={() => this.exportPDF()} className="btn btn-primary" style={{float: 'right'}}>Download PDF</button>
                 
-                <h3 style={{marginTop:20}} align="center">Allocated Slots Report</h3>
-                <table className="table table-striped table-bordered table-hover table-condensed" style={{marginTop:20}} id="mytable">
+                <h3 style={{marginTop:20}}>Allocated Slots Report</h3>
+                <table className="table table-striped table-bordered table-hover table-condensed" style={{marginTop:20}} id="myTable">
                     <thead class="table-primary">
                         <tr>
                         <th><center>Type</center></th>
