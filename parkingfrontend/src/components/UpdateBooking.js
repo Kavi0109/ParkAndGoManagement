@@ -160,73 +160,77 @@ export default class updateBooking extends Component{
 
     render() {
         return (
-        <div className="container">
-          <form onSubmit={this.onSubmit} style={{marginTop:100}}>
-            <h3>Update Booking</h3>
-            <div className="form-group">
-                <label htmlFor="BookingID">BookingID:</label><br/>
-                <input type="text" className="form-control" value={this.state.BookingID} onChange={this.onChangeBookingID} />
-                </div>
-                <br/><br/>
-            <div className="form-group">
-                <label htmlFor="Firstname">Firstname:</label>
-              <input type="text"  className="form-control" value={this.state.Firstname} onChange={this.onChangeFirstname} />
-            </div>
-            <br/><br/>
-            <div className="form-group">
-                <label htmlFor="Lastname">Lastname:</label>
-              <input type="text" className="form-control" value={this.state.Lastname} onChange={this.onChangeLastname} />
-            </div>
-            <br/><br/>
-            <div className="form-group">
-                    <label htmlFor="Contactnumber">Contactnumber:</label>
-              <input type="text" className="form-control" value={this.state.Contactnumber} onChange={this.onChangeContactnumber} />
-            </div>
-            <br/><br/>
-            <div className="form-group">
-                    <label htmlFor="Address">Address:</label>
-              <input type="text" className="form-control" value={this.state.Address} onChange={this.onChangeAddress} />
-            </div>
-            <br/><br/>
-            <div className="form-group">
-                    <label htmlFor="PlateNumber">PlateNumber:</label>
-                    <input type="text" className="form-control" value={this.state.PlateNumber} onChange={this.onChangePlateNumber} />
-            </div>
-            <br/><br/>
-            <div className="form-group">
-                    <label htmlFor="VehicleModel">VehicleModel:</label>
-                    <input type="text" className="form-control" value={this.state.VehicleModel} onChange={this.onChangeVehicleModel} />
-            </div>
-            <br/><br/>
-            <div className="form-group">
-                    <label htmlFor="EntryDate">EntryDate:</label>
-                    <input type="text" className="form-control" value={this.state.EntryDate} onChange={this.onChangeEntryDate} />
-            </div>
-            <br/><br/>
-            <div className="form-group">
-                    <label htmlFor="ExitDate">ExitDate:</label>
-                    <input type="text" className="form-control" value={this.state.ExitDate} onChange={this.onChangeExitDate} />
-            </div>
-            <br/><br/>
+        <center>
+            <div className = "rishmaupdateform">
+                <div className="container">
+                <form onSubmit={this.onSubmit} style={{marginTop:100}}>
+                    <h3>Update Booking</h3>
+                    <div className="form-group">
+                        <label htmlFor="BookingID">BookingID:</label><br/>
+                        <input type="text" className="form-control" value={this.state.BookingID} onChange={this.onChangeBookingID} readOnly />
+                        </div>
+                        <br/>
+                    <div className="form-group">
+                        <label htmlFor="Firstname">Firstname:</label>
+                    <input type="text"  className="form-control" value={this.state.Firstname} onChange={this.onChangeFirstname} />
+                    </div>
+                    <br/>
+                    <div className="form-group">
+                        <label htmlFor="Lastname">Lastname:</label>
+                    <input type="text" className="form-control" value={this.state.Lastname} onChange={this.onChangeLastname} />
+                    </div>
+                    <br/>
+                    <div className="form-group">
+                            <label htmlFor="Contactnumber">Contactnumber:</label>
+                    <input type="text" className="form-control" value={this.state.Contactnumber} onChange={this.onChangeContactnumber} />
+                    </div>
+                    <br/>
+                    <div className="form-group">
+                            <label htmlFor="Address">Address:</label>
+                    <input type="text" className="form-control" value={this.state.Address} onChange={this.onChangeAddress} />
+                    </div>
+                    <br/>
+                    <div className="form-group">
+                            <label htmlFor="PlateNumber">PlateNumber:</label>
+                            <input type="text" className="form-control" value={this.state.PlateNumber} onChange={this.onChangePlateNumber} />
+                    </div>
+                    <br/>
+                    <div className="form-group">
+                            <label htmlFor="VehicleModel">VehicleModel:</label>
+                            <input type="text" className="form-control" value={this.state.VehicleModel} onChange={this.onChangeVehicleModel} />
+                    </div>
+                    <br/>
+                    <div className="form-group">
+                            <label htmlFor="EntryDate">EntryDate:</label>
+                            <input type="text" className="form-control" value={this.state.EntryDate} onChange={this.onChangeEntryDate} />
+                    </div>
+                    <br/>
+                    <div className="form-group">
+                            <label htmlFor="ExitDate">ExitDate:</label>
+                            <input type="text" className="form-control" value={this.state.ExitDate} onChange={this.onChangeExitDate} />
+                    </div>
+                    <br/>
 
-            <div className="form-group">
-                    <label htmlFor="BusNo">BusNo:</label>
-                    <input type="number" className="form-control" value={this.state.BusNo} onChange={this.onChangeBusNo} />
-            </div>
-            <br/><br/>
-            <div className="form-group">
-                    <label htmlFor="BusRoute">BusRoute:</label>
-                    <input type="text" className="form-control" value={this.state.BusRoute} onChange={this.onChangeBusRoute} />
-            </div>
-            <br/>
-            <br/>
-            <button type="Submit" className="Updatepagebtn">
-              Update Booking
-            </button>
-          </form>
-          <br/>
-          <br/>
-        </div>
+                    <div className="form-group">
+                            <label htmlFor="BusNo">BusNo:</label>
+                            <input type="number" className="form-control" value={this.state.BusNo} onChange={this.onChangeBusNo} />
+                    </div>
+                    <br/>
+                    <div className="form-group">
+                            <label htmlFor="BusRoute">BusRoute:</label>
+                            <input type="text" className="form-control" value={this.state.BusRoute} onChange={this.onChangeBusRoute} />
+                    </div>
+                    <br/>
+                    
+                    <button type="Submit" className="Updatepagebtn">
+                    Update Booking
+                    </button>
+                </form>
+                <br/>
+                <br/>
+                </div>
+                </div>
+            </center>
         );
       }
 }

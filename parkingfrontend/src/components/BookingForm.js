@@ -183,16 +183,16 @@ export default function AddBooking(){
 
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <br /><br /><br /><br />
-
-
-
-
-
-
-
-
             
+
+
+
+
+
+
+
+
+            <center><div className ="rishmaFormBody">
 
                 <div className="container">
 
@@ -201,7 +201,7 @@ export default function AddBooking(){
                     <form onSubmit={sendData} id="form">
 
                         <br />
-                        <h2>YOUR PARKING DETAILS</h2>
+                        <h4>YOUR PARKING DETAILS</h4>
                         <h6>Please fill in your details below for new parking slot booking</h6>
 
                         <br />
@@ -320,7 +320,7 @@ export default function AddBooking(){
 
                         <br />
 
-                        <h3>Vehicle Details</h3>
+                        
 
                         <div class="row">
                             <label htmlFor="PlateNumber" class="col-sm-2 col-form-label" for="PlateNumber">Licence Plate Number</label>
@@ -361,7 +361,7 @@ export default function AddBooking(){
 
                         <br />
 
-                        <h3>Entry/Exit Date and Time Details</h3>
+                        
 
                         
 
@@ -395,7 +395,7 @@ export default function AddBooking(){
 
 
 
-                        <h3>Shuttle Bus Tickets</h3>
+                        
                         
 
                         <div class="row">
@@ -440,7 +440,7 @@ export default function AddBooking(){
                         <br />
 
 
-                        <h3>Payment Details</h3>
+                        
 
                         
 
@@ -546,6 +546,8 @@ export default function AddBooking(){
                     <br /> <br /> <br />
 
                 </div>
+            
+            </div></center>
         </>
 
 
