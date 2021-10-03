@@ -115,7 +115,7 @@ export default class AllSalaries extends Component {
    
            <center><h5 style={{color:"#1b7ced"}}> Salary Report</h5></center><hr/>
            
-           <div class="SearchPaddng">  
+        <div class="SearchPaddng">  
 				<form action="" class="searchForm">
 				<input class="searchTxt" type="text" id="myInput" onKeyUp={this.myFunction} placeholder="Search.." name="search" />
 				<button type="submit" class="searchBT">Search</button>
