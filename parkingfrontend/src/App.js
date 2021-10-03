@@ -58,6 +58,12 @@ import updateBooking from './components/updatebooking';
 import BookingReport from './components/BookingReport';
 import fandQ from './components/HelpAndFAQ';
 
+import Login from './components/body/auth/Login';
+import Register from './components/body/auth/Register';
+import Profile from './components/body/profile/Profile';
+
+
+
 
 
 function App() {
@@ -109,6 +115,7 @@ function App() {
       <Menubar/>
       <Body/>
       
+      
      <Route path="/HomeMain" exact component={HomeMain}/>
       <Route path="/aboutus" exact component={Aboutus}/>
       <Route path="/contactus" exact component={Contactus}/>
@@ -122,6 +129,7 @@ function App() {
       <Route path="/outer" exact component={Slottableouter}/>
       <Route path="/choose" exact component={chooseReport}/>
       <Route path="/calculate" exact component={calculate}/>
+      <Route path="/search" exact component={Search}/>
       <Route path="/retrieve" exact component={showParking}
        term={searchTerm}
        searchKeyword = {searchHandler}/>
@@ -160,6 +168,10 @@ function App() {
           <Route path="/transportation" exact component={Transportation}/>
           <Route path="/viewbusses" exact component={Bus}/>
           <Route path="/addnewbus" exact component={AddingBus}/>
+
+          <Route path = "/login" component = {Login} exact/>        
+          <Route path = "/register" component = {Register} exact/>
+          <Route path = "/profile" component = {Profile} exact/>
         </Switch>
       <Footer/>
     </div>

@@ -22,11 +22,6 @@ export default class Allbookings extends Component {
     };
   }
 
-
-
-
-
-
   //Report download
   exportPDF = () => {
 
@@ -98,22 +93,12 @@ export default class Allbookings extends Component {
   render() {
     return (
 
-      <div className="table-wrapper">
+      <div className="container">
+      
         <br/><br/><br/><br/>
-        <h2>All Booking Details</h2>
-
-        
+        <center><h2>All Booking Details</h2></center>
 
         <br/><br/>
-        
-        <div class="SearchPaddng">  
-          <form action="" class="searchForm">
-            <input class="searchTxt" type="text" placeholder="Search.." name="search" />
-            <button type="submit" className="searchBTN">Search</button>
-          </form>
-        </div>
-
-        
         
 
         <Table striped bordered hover>

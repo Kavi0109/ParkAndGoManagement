@@ -1,13 +1,25 @@
 import React from "react"
+import axios from "axios"
 
 // imgs
 import park_vec from "../assets/parking.png"
 import parkex_logo from "../assets/B&W.png"
 
 
+
 function Header(){
 
+    const handleLogout = async () => {
+
+        try {
+            await axios.get('/user/logout')
+            localStorage.removeItem('firstLogin')
+            window.location.href='/';
+        } catch (err) {
+            window.location.href='/';
+        }
     
+    }
 
     return(
         <div>
@@ -39,10 +51,29 @@ function Header(){
                                 <a class="dropdown-item" role="presentation" href="#">MANAGE FINANCES</a>
                                 </div>
                         </li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#"></a>                         </li>
+
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#"></a>                         </li>
+
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#"></a>                         </li>
+
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#"></a>                         </li>
+
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#"></a>                         </li>
+
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#"></a>                         </li>
                     </ul>
                     <form class="form-inline mr-auto" target="_self">
                         <div class="form-group"><label for="search-field"><i class="fa fa-search text-white"></i></label><input class="form-control search-field" type="search" id="search-field" name="search"/></div>
                     </form><span class="navbar-text"> <a class="login" href="/login">Log In</a></span><a class="btn btn-light action-button" role="button" href="/register">Signup</a>
+                    <li class="nav-item dropdown">
+                            <a class="btn btn-light action-button" data-toggle="dropdown" aria-expanded="false" href="#">Profile</a>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item" role="presentation" href="/profile">Profile</a>
+                                <a class="dropdown-item" role="presentation" href="/" onClick={handleLogout}>Log Out</a>
+                            </div>
+
+                        </li>
                 </div>
             </div>
         </nav>

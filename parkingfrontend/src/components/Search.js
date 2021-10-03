@@ -1,71 +1,290 @@
-/*import React from "react";
+import React from 'react';
+import { MDBDataTable } from 'mdbreact';
 
-export default function Search(){
-
-  handlekey :  myFunction() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }       
-    }
+const Search = () => {
+  const data = {
+    columns: [
+      {
+        label: 'Slot Type',
+        field: 'name',
+        sort: 'asc',
+        width: 50
+      },
+      {
+        label: 'Slot Number',
+        field: 'position',
+        sort: 'asc',
+        width: 20
+      },
+      {
+        label: 'Status',
+        field: 'office',
+        sort: 'asc',
+        width: 50
+      },
+    ],
+    rows: [
+      {
+        name: 'First Floor Parking',
+        position: '01',
+        office: 'Available',
+      },
+      {
+        name: 'First Floor Parking',
+        position: '02',
+        office: 'Available',
+      },
+      {
+        name: 'First Floor Parking',
+        position: '03',
+        office: 'Booked',
+      },
+      {
+        name: 'First Floor Parking',
+        position: '04',
+        office: 'Available',
+      },
+      {
+        name: 'First Floor Parking',
+        position: '05',
+        office: 'Available',
+      },
+      {
+        name: 'First Floor Parking',
+        position: '06',
+        office: 'Available',
+      },
+      {
+        name: 'First Floor Parking',
+        position: '07',
+        office: 'Available',
+      },
+      {
+        name: 'First Floor Parking',
+        position: '08',
+        office: 'Available',
+      },
+      {
+        name: 'First Floor Parking',
+        position: '09',
+        office: 'Available',
+      },
+      {
+        name: 'First Floor Parking',
+        position: '10',
+        office: 'Available',
+      },
+      {
+        name: 'First Floor Parking',
+        position: '11',
+        office: 'Available',
+      },
+      {
+        name: 'First Floor Parking',
+        position: '12',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '01',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '02',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '03',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '04',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '05',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '06',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '07',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '08',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '09',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '10',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '11',
+        office: 'Available',
+      },
+      {
+        name: 'Second Floor Parking',
+        position: '12',
+        office: 'Available',
+      },
+      {
+        name: 'Outer Parking',
+        position: '01',
+        office: 'Available',
+      },
+      {
+        name: 'Outer Parking',
+        position: '02',
+        office: 'Available',
+      },
+      {
+        name: 'Outer  Parking',
+        position: '03',
+        office: 'Available',
+      },
+      {
+        name: 'Outer  Parking',
+        position: '04',
+        office: 'Available',
+      },
+      {
+        name: 'Outer  Parking',
+        position: '05',
+        office: 'Available',
+      },
+      {
+        name: 'Outer  Parking',
+        position: '06',
+        office: 'Available',
+      },
+      {
+        name: 'Outer  Parking',
+        position: '07',
+        office: 'Available',
+      },
+      {
+        name: 'Outer  Parking',
+        position: '08',
+        office: 'Available',
+      },
+      {
+        name: 'Outer  Parking',
+        position: '09',
+        office: 'Available',
+      },
+      {
+        name: 'Outer  Parking',
+        position: '10',
+        office: 'Available',
+      },
+      {
+        name: 'Outer  Parking',
+        position: '11',
+        office: 'Available',
+      },
+      {
+        name: 'Outer  Parking',
+        position: '12',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '01',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '02',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '03',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '04',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '05',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '06',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '07',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '08',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '09',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '10',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '11',
+        office: 'Available',
+      },
+      {
+        name: 'Basement Parking',
+        position: '12',
+        office: 'Available',
+      },
+    ]
   };
 
-  return(
-    <div>
-      <h2>My Customers</h2>
-
-<input type="text" id="myInput" onkeyup={this.handlekey} placeholder="Search for names.." title="Type in a name"/>
-
-<table id="myTable">
-  <tr class="header">
-    <th >Name</th>
-    <th >Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Berglunds snabbkop</td>
-    <td>Sweden</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Koniglich Essen</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Italy</td>
-  </tr>
-  <tr>
-    <td>North/South</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Paris specialites</td>
-    <td>France</td>
-  </tr>
-</table>
+  return (
+    <div className="container">
+    <MDBDataTable
+    striped
+    bordered
+    medium="true"
+    responsive
+    data={data}
+    order={['name', 'asc' ]}
+  />
+  <style jsx global>{`
+      @import "../styles/bootstrap-custom/jsx-import";
+      .table thead:last-child{
+        display:none;
+      }
+    `}</style>
     </div>
-  )
+  );
+}
 
-}*/
+export default Search;

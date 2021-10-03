@@ -17,6 +17,8 @@ export default class showparking extends Component{
       
     }
 
+
+
     
 
     exportPDF = () => {
@@ -65,17 +67,21 @@ export default class showparking extends Component{
             });
     }    
 
-
-    
-    
-
     render(){
         return(
             <div className="container">
-
-                    
-
                 <br></br>
+
+                <div style={{ marginLeft: 1090, marginTop: 30, border: 5 }}>
+                    <input
+                    type="text"
+                    placeholder="Search.."
+                    name="searchQuery"
+                    style={{ height: 40 }}
+                    />
+                </div>
+
+                
             
                 <button onClick={() => this.exportPDF()} className="btn btn-primary" style={{float: 'right'}}>Download PDF</button>
                 

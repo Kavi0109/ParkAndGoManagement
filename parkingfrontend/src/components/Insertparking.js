@@ -4,12 +4,7 @@ import DatePicker from 'react-datetime';
 import moment from 'moment';
 import 'react-datetime/css/react-datetime.css';
 import {Link} from 'react-router-dom';
-import gal1 from './gal1.jpg';
-import gal2 from './gal2.jpg';
-import gal3 from './gal3.jpg';
-import gal4 from './gal4.jpg';
-import gal5 from './gal5.jpg';
-import gal6 from './gal6.jpg';
+
 //import Select from 'react-select';
 
 const colour ={
@@ -151,9 +146,13 @@ function Insertparking(){
         </div>
         <section class="vh-80 ">
   <div class="container py-5 h-80">
+  
     <div class="row d-flex justify-content-center align-items-center h-80">
+      
       <div class="col col-xl-100">
+        
         <div class="card rounded" >
+          
           <div class="row g-0">
             <div class=" col-lg-5 d-none d-md-block">
               <img
@@ -162,10 +161,16 @@ function Insertparking(){
                 alt="login form"
                 class="img-fluid"
               />
+              <br></br> <br></br> <br></br>
+                  <div class="d-grid gap-2">
+                  <a href='./search'>
+                <button type="submit" className="btn btn-primary">Search For Avalible Parking Slots</button></a>
+                </div>
+              
             </div>
             <div class="col  d-flex align-items-center">
               <div class="card-body text-black">
-
+              
                 <form onSubmit={sendData}  className="container p-3 bg-light text-dark rounded"><br></br><br></br>
 
                   <div class="d-flex">
@@ -194,8 +199,14 @@ function Insertparking(){
                     minValue={0}
                     onChange={(event)=>{
                         setSlot_no(event.target.value);
-                    }} /></div>
+                    }} />
+                    
+                    </div>
+
+                
                 </div>
+
+                
 
                 <div class="row">
                     <label htmlFor="ssize" class="col-form-label">Slot Size (in inches):</label>
@@ -263,11 +274,16 @@ function Insertparking(){
                 </form>
 
               </div>
+              
             </div>
+            
           </div>
         </div>
+        
       </div>
+      
     </div>
+    
   </div>
 </section>
         </div>
