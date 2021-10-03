@@ -330,7 +330,7 @@ export default function AddBooking(){
                                     type="text"
                                     className="form-control"
                                     id="PlateNumber"
-                                    pattern="[A-Z]{3}-[0-9]{4}"
+                                    pattern="[A-Z]{3}[-][0-9]{4}"
                                     placeholder="DSA-1122"
                                     onChange={(event) => {
                                         setPlateNumber(event.target.value);
@@ -525,17 +525,24 @@ export default function AddBooking(){
 
                         <br />
 
-                        <div className="Submitbtndiv">
-                            <a href="/PaymentForm">
-                                <button type="submit" className="Submitbtn">Submit</button>
-                            </a>
-                        </div>
+                        <center>
+                            <div className="Submitbtndiv">
+                                <a href="/PaymentForm">
+                                    <button type="submit" className="Submitbtn">Submit</button>
+                                </a>
+                            </div>
+                        </center>
 
                     </form>
+                    
+                    
+                    <center>
+                        <div className="GoBackdiv">
+                            <a href="/homeRishma"><button type="" className="GoBack">Go Back</button></a>
+                        </div>
+                    </center>
 
-                    <div className="GoBackdiv">
-                        <a href="/homeRishma"><button type="" className="GoBack">Go Back</button></a>
-                    </div>
+
                     <br /> <br /> <br />
 
                 </div>

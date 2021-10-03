@@ -113,10 +113,10 @@ function Home(){
             <div>
                 
 
-                <div class="row">
+                <div className="row">
                     <h1>Packages</h1>
                     <br/><br/><br/>
-                    <div class="column">
+                    <div className="column">
 
                         <a href="/addRishma">
                             <img src={park9} class="d-block" width="100%" height="200" alt="..."></img>

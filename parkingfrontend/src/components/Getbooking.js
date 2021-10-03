@@ -68,19 +68,3 @@ export default class getBooking extends Component {
         );
     }
 }
-
-/*  <td>
-    <Link to={"/edit-booking/" + this.props.obj._id}>
-        <button className="Updatebtn">Edit</button>
-    </Link>
-    </td>
-
-
-
-
-
-    <td>{this.props.obj.CardNo}</td>
-    <td>{this.props.obj.CardHolderName}</td>
-    <td>{this.props.obj.ExpireDate}</td>
-    <td>{this.props.obj.SecurityCode}</td>
-*/
