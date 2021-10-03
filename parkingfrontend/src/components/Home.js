@@ -63,7 +63,7 @@ return(
 				<li class="menu4"><a href="/">Salary Report</a></li>
 				<li class="menu4"><a href="/addl">Apply Leaves</a></li>
 				<li class="menu4"><a href="/l">Leave Report</a></li>
-				<li class="menu4"><a href="/">LogOut</a></li>
+				<li class="menu4"><a href="/login">LogOut</a></li>
 			</ul>
 			</fieldset>
 		</div>

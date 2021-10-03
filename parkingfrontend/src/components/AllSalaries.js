@@ -3,7 +3,7 @@ import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 
 import GetSalary from './GetSalary';
-
+import {Link} from 'react-router-dom';
 import jsPDF from 'jspdf';
 import "jspdf-autotable";
 import logo from './B&W.png';
@@ -44,20 +44,20 @@ export default class AllSalaries extends Component {
 
     let content = {
 
-      startY: 220,
+      startY: 260,
       head: headers,
       body: data
 
     };
 
 
-    doc.addImage(blue,'PNG',230,20,100,100)
+    doc.addImage(blue,'PNG',230,60,120,100)
     doc.setTextColor(100);
     doc.setFontSize(13);
-    doc.text(title, 240,160);
+    doc.text(title, 250,200);
     doc.setTextColor(150);
     doc.setFontSize(13);
-    doc.text(title2, marginLeft, 180);
+    doc.text(title2, marginLeft, 220);
     doc.autoTable(content);
     doc.save("Monthy Salary Report.pdf")
 
@@ -84,6 +84,25 @@ export default class AllSalaries extends Component {
   }
 
 
+  myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+
   render() {
     const mystyle={
       backgroundColor:"white"
@@ -98,13 +117,13 @@ export default class AllSalaries extends Component {
            
            <div class="SearchPaddng">  
 				<form action="" class="searchForm">
-				<input class="searchTxt" type="text" placeholder="Search.." name="search" />
+				<input class="searchTxt" type="text" id="myInput" onKeyUp={this.myFunction} placeholder="Search.." name="search" />
 				<button type="submit" class="searchBT">Search</button>
     
 				</form>
 			</div><br/><br/> 
           
-          <Table striped bordered hover>
+          <Table striped bordered hover id="myTable">
             <thead>
               <tr>
                 <th>Emaployee No</th>
@@ -122,8 +141,11 @@ export default class AllSalaries extends Component {
               {this.DataTable()}
             </tbody>
           </Table>
-          <br/>
-          <button onClick={() => this.exportPDF()} className="slip-link">Download PDF</button><br/><br/>
+          <br/><br/><br/>
+          <button onClick={() => this.exportPDF()} className="Btn7" style={{marginRight:"20px"}}>Download Report</button>
+          <Link className="Btn7" to="/home">
+                        Cancel
+                    </Link><br/><br/>
         </div>
         </div>
        

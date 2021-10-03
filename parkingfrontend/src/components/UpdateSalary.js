@@ -193,7 +193,7 @@ export default class UpdateSalary extends Component {
                     <button data-number>0</button>
                     <button data-equals class="span-two">=</button>
             </div>
-           <center><img src={park3} width="400" height="450" alt="..."></img></center><br/>
+           <center><img src={park3} width="400" height="350" alt="..."></img></center><br/>
           </div>
 
              <form onSubmit={this.onSubmit}>

@@ -6,14 +6,14 @@
 } */
 
 
- body {
+ /* body {
   font-family: roboto, sans-serif;
   background-color:white;
  background-repeat:repeat;
  background-attachment: fixed;
  background-size: 100%; 
     
-} 
+}  */
 
 
 #netpay{
@@ -26,7 +26,7 @@
 #formStyle1  input[type= date],
 #formStyle1  input[type= number]{
     width: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 #formStyle1 textarea{
     width: 50%;
@@ -84,7 +84,7 @@
 
   .slip{
     border: 3px solid #656b6e ;
-    padding:20px;
+    padding:40px;
       margin:30px;
       background-color: white;
     }
@@ -93,10 +93,15 @@
     }
 
     .slip1{
-      border: 3px solid #656b6e ;
-      padding:5px;
+       border: 3px solid #656b6e ;
+      padding:25px;
         margin:40px;
-        background-color: white;
+        background-color: white; 
+        /* padding:10px;
+        margin:100px;
+        border-radius: 18px;
+        background-color:white;
+        box-shadow:1px 1px 2px black, 0 0 25px black, 0 0 5px black;  */
       }
 
     .logo{
@@ -108,10 +113,8 @@
 
       .logo2{
         position: absolute;
-    left: 60px;
-    
-   
-      padding: 10px;
+        left: 190px;
+        padding: 10px;
       }
 
 .nano{

@@ -240,3 +240,22 @@ When you move the curser to a menu item it will highlighted with pink*/
   display: inline-block;
   font-size: 14px;
 }
+
+.Btn7:hover{
+	background-color: #3e8e41;
+}
+.Btn7{
+	padding:5px 20px;
+	font-size: 16px;
+  font-weight: 2px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color:#4e5157;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px #999;
+  
+}
+

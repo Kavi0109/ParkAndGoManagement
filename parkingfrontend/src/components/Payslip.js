@@ -5,6 +5,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import jsPDF from 'jspdf';
 import "jspdf-autotable";
+import html2canvas from 'html2canvas';
 
 
 export default class Payslip extends Component {
@@ -29,24 +30,35 @@ export default class Payslip extends Component {
     }
   }
 
-//   handlePdf = () => {
-//     const input = document.getElementById('payslip');
+  handlePdf = () => {
+	const input = document.getElementById('rep1');
 
-//     html2canvas(input)
-//         .then((canvas) => {
-//            // const imgData = canvas.toDataURL('image/png');
-//             const pdf = new jsPDF('p', 'px', 'a4');
-//             var width = pdf.internal.pageSize.getWidth();
-//             var height = pdf.internal.pageSize.getHeight();
+	html2canvas(input)
+		.then((canvas) => {
+	   //      const imgData = canvas.toDataURL('image/png');
+	   //      const pdf = new jsPDF('p', 'px', 'a4');
+	   //      var width = pdf.internal.pageSize.getWidth();
+	   //      var height = pdf.internal.pageSize.getHeight();
 
-//            // pdf.addImage(imgData, 'JPEG', 0, 0, width, height);
-//             pdf.save("test.pdf");
-//         });
-// };
+	   //      pdf.addImage(imgData, 'JPEG', 0, 0, width, height);
+	   //      pdf.save("test.pdf");
+	   //  });
 
-  print(){
-    window.print();
-  }
+		const imgData = canvas.toDataURL('image/png');
+		const pdf = new jsPDF({
+		  orientation: 'landscape',
+		});
+		const imgProps= pdf.getImageProperties(imgData);
+		const pdfWidth = pdf.internal.pageSize.getWidth();
+		const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+		pdf.addImage(imgData, 'PNG', 0, 10, pdfWidth, pdfHeight);
+		pdf.save('Payslip.pdf');
+	   });
+};
+
+//   print(){
+//     window.print();
+//   }
 
   componentDidMount() {
     axios.get("/salary/bet/" + this.props.match.params.id)
@@ -72,14 +84,15 @@ export default class Payslip extends Component {
   }
   render(){
     return(
-      <div>
+	<div>	
+      <div id="rep1">
        
-            <div class="slip1" id="payslip">
+            <div class="slip1">
               <div class="logo2">  <img src={require('./Images/Blue.jpg').default }  width="200" height="150"/></div>
-       <center>      <div class="hd"><h6 style={{color:"#1b7ced", fontWeight:"bold"}}>PARK EXPRESS<br/>C6367<br/>COLOMBO<br/>WESTERN PROVINCE</h6></div></center>
-        <center>   <h6 style={{color:"grey"}}>Payslip for the period of August 2021</h6></center>
+       <center>      <div class="hd"><h6 style={{color:"#1b7ced", fontWeight:"bold"}}>PARK EXPRESS<br/>C6367<br/>COLOMBO<br/>WESTERN PROVINCE<br/><br/></h6></div></center>
+        <center>   <h5 style={{color:"grey"}}>Payslip for the period of August 2021</h5></center>
 
-		<br/>
+		<br/><br/>
              <div class ="slip">
 
              <div class="row">
@@ -262,13 +275,17 @@ export default class Payslip extends Component {
 
         
             </div>
-            {/* <button onClick={this.handlePdf} className="slip-link">Download PDF</button><br/><br/> */}
-            <center> <button onClick={this.print} class="Btn5">Print Payslip</button> 
+           
+
+            </div>
+
+			
+			
+            <center> <button onClick={this.handlePdf} class="Btn5">Download Payslip</button> 
 			<Link className="Btn6" to="/">
                         Cancel
                     </Link></center>
-
-            </div>
+			</div>
     )
 }
 

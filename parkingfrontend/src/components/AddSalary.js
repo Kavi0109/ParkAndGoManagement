@@ -172,7 +172,7 @@ export default class AddSalary extends Component {
                     <button data-number>0</button>
                     <button data-equals class="span-two">=</button>
             </div>
-           <center><img src={park3} width="400" height="450" alt="..."></img></center><br/>
+           <center><img src={park3} width="400" height="350" alt="..."></img></center><br/>
           </div>
 
          
@@ -183,7 +183,7 @@ export default class AddSalary extends Component {
                   <label for="employeeNo" >Emaployee No</label>
 
 						
-                    <input type="text" className="form-control" pattern="E[0-9]{3}" name="employeeNo" id="employeeNo" placeholder="enter employeeNo starting with E and 3 digits" 
+                    <input type="text" className="form-control" pattern="E[0-9]{3}" name="employeeNo" id="employeeNo" required placeholder="enter employeeNo starting with E and 3 digits" 
                     onChange={this.onChangeemployeeNo}/> 
                    
               
@@ -276,7 +276,7 @@ export default class AddSalary extends Component {
    
     </div>
    
-   
+
     
     );
   }
