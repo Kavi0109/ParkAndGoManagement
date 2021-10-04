@@ -2,32 +2,26 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-import bus_vec from "../assets/bus.png"
+import stm_vec from "../assets/stm.png"
 
-
-
-function AddingBus() {
+function AddingStaff() {
 
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
 
     today = yyyy + '-' + mm + '-' + dd;
-    var ren_day = (yyyy+5) + '-' + mm + '-' + dd;
-    //document.write(today)
 
     const history = useHistory();
     const allx = document.getElementsByTagName
      
 
-    const [bus_Id,  setBusId] = useState(" ");
+    const [stm_Id, setStmId] = useState(" ");
     const [name, setName] = useState(" ");
-    const [no_Plate, setNoPlate] = useState(" ");
-    const [owner_Name, setOwnerName] = useState(" ");
-    const [date_Rented, setDateRented] = useState(" ");
-    const [rental_Rem, setRentalRem] = useState(" ");
-    const [phone_No, setPhoneNo] = useState(" ");
+    const [type, setType] = useState(" ");
+    const [phone, setPhone] = useState(" ");
+    const [date_Reg, setDateReg] = useState(" ");
 
     const busid = document.getElementById('busid')
     const busname = document.getElementById('busname')
@@ -38,29 +32,37 @@ function AddingBus() {
     const phoneno = document.getElementById('phoneno')
     const errorElement = document.getElementById('error')
 
-    function sendBus(e){
+    function sendStaff(e){
 
-        
+    
 
 
         
         e.preventDefault();
         
-        var newBus = {
-            bus_Id, 
+        var newStaff = {
+            stm_Id,
             name,
-            no_Plate,
-            owner_Name,
-            date_Rented,
-            rental_Rem,
-            phone_No
+            type,
+            phone,
+            date_Reg
         }
         
         // Adding
-        axios.post("http://localhost:8070/bus/add", newBus).then(()=>{
-            alert("Bus Added")
+        axios.post("http://localhost:8070/staff/add", newStaff).then((res)=>{
+            console.log(res.data.error)
+            if(res.data.error==undefined){
+                alert("Staff Added")
+                history.push("/viewstaff")
+            }
+            else{
+                alert(res.data.error)
+            }
             
-            history.push("/viewbusses")
+            
+            //
+       
+            
             
             
         }).catch((err)=>{
@@ -72,35 +74,35 @@ function AddingBus() {
 
 
     return (
-      <div>
-          <div className="transportation-form">
+      <div className="transportation-form">
+          
           <div class="container register">
                 <div class="row">
-                    <div class="col-md-3 register-left">
-                        <img src={bus_vec} alt=""/>
-                        <h3>Busses</h3>
-                        <p>The shuttles we use to transport our employees</p>
+                    <div class="col-md-3 register-left-yellow">
+                        <img src={stm_vec} alt=""/>
+                        <h3>Staff</h3>
+                        <p>Our staff, who engage with customers with safe</p>
                        
                     </div>
                     
-                    <div class="col-md-9 register-right">
-                    <form className="form-shape" type='submit' onSubmit={sendBus}>
+                    <div class="col-md-9 register-right-yellow">
+                    <form className="form-shape" type='submit' onSubmit={sendStaff}>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Adding a new bus</h3>
+                                <h3 class="register-heading">Adding a new staff member</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="validationCustom01" class="form-label">Bus ID</label>
-                                            <input id="busid" type="text" class="form-control" placeholder="Bus ID" onChange={(e)=>{
+                                            <label for="validationCustom01" class="form-label">Staff Member ID</label>
+                                            <input id="stmid" type="text" class="form-control" placeholder="STM ID" onChange={(e)=>{
                                                 
-                                                setBusId(e.target.value);
+                                                setStmId(e.target.value);
                                                 e.target.setCustomValidity('');
                                                
 
                                             }} required onInvalid={(e) => { 
                                                 
-                                                    e.target.setCustomValidity('Please enter a unique valid Bus ID')
+                                                    e.target.setCustomValidity('Please enter a unique valid Stm ID')
 
                                               
                                                 
@@ -108,25 +110,25 @@ function AddingBus() {
                                             
                                         </div>
                                         <div class="form-group">
-                                        <label class="form-label">Bus Name</label>
-                                            <input id="busname" type="text" class="form-control" placeholder="Bus Name" onChange={(e)=>{
+                                        <label class="form-label">Member Name</label>
+                                            <input id="name" type="text" class="form-control" placeholder="Member Name" onChange={(e)=>{
                                                 
                                                 setName(e.target.value);
                                                 e.target.setCustomValidity('');
 
                                             }}  required onInvalid={(e) => { 
                                                 
-                                                e.target.setCustomValidity('Bus Name cannot be empty')
+                                                e.target.setCustomValidity('Name cannot be empty')
 
                                           
                                             
                                          }} />
                                         </div>
                                         <div class="form-group">
-                                        <label class="form-label">No. Plate</label>
-                                            <input required id="noplate"  type="text" class="form-control" placeholder="Number Plate" onChange={(e)=>{
+                                        <label class="form-label">Type</label>
+                                            <input required id="type"  type="text" class="form-control" placeholder="Driver or Conductor" onChange={(e)=>{
                                                 
-                                                setNoPlate(e.target.value);
+                                                setType(e.target.value);
                                                 e.target.setCustomValidity('');
 
                                             }} onInvalid={(e) => { 
@@ -138,10 +140,10 @@ function AddingBus() {
                                          }} />
                                         </div>
                                         <div class="form-group">
-                                        <label class="form-label">Owner's Name</label>
-                                            <input required id="ownername"  type="text" class="form-control"  placeholder="Owner's Name" onChange={(e)=>{
+                                        <label class="form-label">Phone No:</label>
+                                            <input required id="phone"  type="text" class="form-control"  placeholder="Eg: 773675637" onChange={(e)=>{
                                                 
-                                                setOwnerName(e.target.value);
+                                                setPhone(e.target.value);
                                                 e.target.setCustomValidity('');
 
                                             }} onInvalid={(e) => { 
@@ -155,10 +157,10 @@ function AddingBus() {
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                        <label class="form-label">Date Rented</label>
-                                            <input required id="daterented"  min={today}  type="date" class="form-control" onChange={(e)=>{
+                                        <label class="form-label">Registering Date</label>
+                                            <input required id="datereg" min={today}  type="date" class="form-control" onChange={(e)=>{
                                                 
-                                                setDateRented(e.target.value);
+                                                setDateReg(e.target.value);
                                                 e.target.setCustomValidity('');
 
                                             }} onInvalid={(e) => { 
@@ -168,39 +170,9 @@ function AddingBus() {
                                           
                                             
                                          }} />
+                                       
                                         </div>
-                                        <div class="form-group">
-                                        <label class="form-label">Rental Remaining</label>
-                                            <input required id="rentalrem" min={ren_day}  type="date" class="form-control" onChange={(e)=>{
-                                                
-                                                setRentalRem(e.target.value);
-                                                e.target.setCustomValidity('');
-
-                                            }} onInvalid={(e) => { 
-                                                
-                                                e.target.setCustomValidity('Rental Remaining should not be empty')
-
-                                          
-                                            
-                                         }} />
-                                        </div>
-                                        <div class="form-group">
-                                        <label class="form-label">Contact Number</label>
-                                            <input required id="phoneno" type="number" maxlength="10" class="form-control" placeholder="Ex: 773675637" onChange={(e)=>{
-                                                
-                                                setPhoneNo(e.target.value);
-                                                e.target.setCustomValidity('');
-
-                                            }} onInvalid={(e) => { 
-                                                
-                                                e.target.setCustomValidity('The number your entered is not valid')
-
-                                          
-                                            
-                                         }}
-                                         
-                                         />
-                                        </div>
+    
         
                                        <input type="submit" class="btnRegister"  value="Add"/>
 
@@ -218,10 +190,10 @@ function AddingBus() {
                 
 
             </div>
-</div>
+
 
       </div>
     )
     }
   
-  export default AddingBus;
+  export default AddingStaff;

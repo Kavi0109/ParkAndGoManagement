@@ -1,98 +1,93 @@
-import React, { useState } from 'react';
-import axios from "axios";
-import { useHistory } from "react-router-dom";
-
+import { withRouter, useHistory } from "react-router-dom"
+import { useState, useEffect } from "react"
 import bus_vec from "../assets/bus.png"
 
+function UpdateBus(props){
 
-
-function AddingBus() {
-
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); 
-    var yyyy = today.getFullYear();
-
-    today = yyyy + '-' + mm + '-' + dd;
-    var ren_day = (yyyy+5) + '-' + mm + '-' + dd;
-    //document.write(today)
-
+    
     const history = useHistory();
-    const allx = document.getElementsByTagName
-     
-
-    const [bus_Id,  setBusId] = useState(" ");
-    const [name, setName] = useState(" ");
-    const [no_Plate, setNoPlate] = useState(" ");
-    const [owner_Name, setOwnerName] = useState(" ");
-    const [date_Rented, setDateRented] = useState(" ");
-    const [rental_Rem, setRentalRem] = useState(" ");
-    const [phone_No, setPhoneNo] = useState(" ");
-
-    const busid = document.getElementById('busid')
-    const busname = document.getElementById('busname')
-    const noplate = document.getElementById('noplate')
-    const ownername = document.getElementById('ownername')
-    const daterented = document.getElementById('daterented')
-    const rentalrem = document.getElementById("rentalrem")
-    const phoneno = document.getElementById('phoneno')
-    const errorElement = document.getElementById('error')
-
-    function sendBus(e){
-
-        
+    const [bus, setBus] = useState([]);
+    //console.warn("props", props.match.params.id)
 
 
-        
-        e.preventDefault();
-        
-        var newBus = {
-            bus_Id, 
-            name,
-            no_Plate,
-            owner_Name,
-            date_Rented,
-            rental_Rem,
-            phone_No
-        }
-        
-        // Adding
-        axios.post("http://localhost:8070/bus/add", newBus).then(()=>{
-            alert("Bus Added")
+    useEffect(async ()=>{
+        let res = await fetch("http://localhost:8070/bus/get/"+props.match.params.id)
+        let data = await res.json()
+        setBus(data.businfo)
+
+
+        //console.log(bus.bus_Id)
+    })
+
+    const [bus_Id,  setBusId] = useState(bus.bus_Id);
+    const [name, setName] = useState(bus.name);
+    const [no_Plate, setNoPlate] = useState(bus.no_Plate);
+    const [owner_Name, setOwnerName] = useState(bus.owner_Name);
+    const [date_Rented, setDateRented] = useState(bus.date_Rented);
+    const [rental_Rem, setRentalRem] = useState(bus.rental_Rem);
+    const [phone_No, setPhoneNo] = useState(bus.phone_No);
+
+
+    //Update
+    function updateBus() {
+            let items = {bus_Id, name, no_Plate, owner_Name, date_Rented, rental_Rem, phone_No}
+                //console.warn(bus.bus_Id)
+                fetch("http://localhost:8070/bus/update/"+props.match.params.id,{
+                    method: 'PUT',
+                    headers:{
+                        'Accept': 'application/json',
+                        'Content-type' : 'application/json'
+
+                    },
+                    body:JSON.stringify(items)
+                }).then((result)=>{
+                    result.json().then((response)=>{
+                        //console.warn(response)
+                        alert(response.status)
+                    
+                    })
+                }).catch((err)=>{
+                    if(err.error==undefined){
+                        alert("Bus Updated")
+                        history.push("/viewbusses")
+                    }
+                    else{
+                        alert(err.error)
+                        history.push("/viewbusses")
+                    }
+
+                })
             
-            history.push("/viewbusses")
-            
-            
-        }).catch((err)=>{
-            alert(err);
-        })
-
-
     }
+    
 
 
-    return (
-      <div>
-          <div className="transportation-form">
-          <div class="container register">
+  
+
+
+    return(
+
+        <div className="transportation-form">
+            
+            <div class="container register">
                 <div class="row">
                     <div class="col-md-3 register-left">
-                        <img src={bus_vec} alt=""/>
+                    <img src={bus_vec} alt=""/>
                         <h3>Busses</h3>
                         <p>The shuttles we use to transport our employees</p>
                        
                     </div>
                     
                     <div class="col-md-9 register-right">
-                    <form className="form-shape" type='submit' onSubmit={sendBus}>
+                    <form className="form-shape" type='submit' >
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Adding a new bus</h3>
+                                <h3 class="register-heading">Updating Bus : {bus.bus_Id}</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="validationCustom01" class="form-label">Bus ID</label>
-                                            <input id="busid" type="text" class="form-control" placeholder="Bus ID" onChange={(e)=>{
+                                            <input id="busid" type="text" class="form-control" placeholder="Bus ID"  defaultValue={bus.bus_Id} onChange={(e)=>{
                                                 
                                                 setBusId(e.target.value);
                                                 e.target.setCustomValidity('');
@@ -104,12 +99,12 @@ function AddingBus() {
 
                                               
                                                 
-                                             }}/>
+                                             }} />
                                             
                                         </div>
                                         <div class="form-group">
                                         <label class="form-label">Bus Name</label>
-                                            <input id="busname" type="text" class="form-control" placeholder="Bus Name" onChange={(e)=>{
+                                            <input id="busname" type="text" class="form-control" placeholder="Bus Name" defaultValue={bus.name} onChange={(e)=>{
                                                 
                                                 setName(e.target.value);
                                                 e.target.setCustomValidity('');
@@ -124,7 +119,7 @@ function AddingBus() {
                                         </div>
                                         <div class="form-group">
                                         <label class="form-label">No. Plate</label>
-                                            <input required id="noplate"  type="text" class="form-control" placeholder="Number Plate" onChange={(e)=>{
+                                            <input required id="noplate"  type="text" class="form-control" placeholder="Number Plate" defaultValue={bus.no_Plate} onChange={(e)=>{
                                                 
                                                 setNoPlate(e.target.value);
                                                 e.target.setCustomValidity('');
@@ -139,7 +134,7 @@ function AddingBus() {
                                         </div>
                                         <div class="form-group">
                                         <label class="form-label">Owner's Name</label>
-                                            <input required id="ownername"  type="text" class="form-control"  placeholder="Owner's Name" onChange={(e)=>{
+                                            <input required id="ownername"  type="text" class="form-control"  placeholder="Owner's Name" defaultValue={bus.owner_Name} onChange={(e)=>{
                                                 
                                                 setOwnerName(e.target.value);
                                                 e.target.setCustomValidity('');
@@ -155,8 +150,10 @@ function AddingBus() {
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                        <label class="form-label">Date Rented</label>
-                                            <input required id="daterented"  min={today}  type="date" class="form-control" onChange={(e)=>{
+                                        <label class="form-label">Date Rented Previous Date: {bus.date_Rented}
+                                    
+                                        </label>
+                                            <input required id="daterented"  type="date" class="form-control"  defaultValue={bus.date_Rented} onChange={(e)=>{
                                                 
                                                 setDateRented(e.target.value);
                                                 e.target.setCustomValidity('');
@@ -170,8 +167,8 @@ function AddingBus() {
                                          }} />
                                         </div>
                                         <div class="form-group">
-                                        <label class="form-label">Rental Remaining</label>
-                                            <input required id="rentalrem" min={ren_day}  type="date" class="form-control" onChange={(e)=>{
+                                        <label class="form-label">Rental Remaining Previous Date: {bus.rental_Rem}</label>
+                                            <input required id="rentalrem"  type="date" class="form-control"  defaultValue={bus.rental_Rem} onChange={(e)=>{
                                                 
                                                 setRentalRem(e.target.value);
                                                 e.target.setCustomValidity('');
@@ -186,7 +183,7 @@ function AddingBus() {
                                         </div>
                                         <div class="form-group">
                                         <label class="form-label">Contact Number</label>
-                                            <input required id="phoneno" type="number" maxlength="10" class="form-control" placeholder="Ex: 773675637" onChange={(e)=>{
+                                            <input required id="phoneno"  type="number" maxlength="10" class="form-control" placeholder="Ex: 773675637" defaultValue={bus.phone_No} onChange={(e)=>{
                                                 
                                                 setPhoneNo(e.target.value);
                                                 e.target.setCustomValidity('');
@@ -201,8 +198,9 @@ function AddingBus() {
                                          
                                          />
                                         </div>
-        
-                                       <input type="submit" class="btnRegister"  value="Add"/>
+                                         
+                                        
+                                       <input type="submit" class="btnRegister"  value="Update" onClick={updateBus}/>
 
                                        
                                     </div>
@@ -218,10 +216,12 @@ function AddingBus() {
                 
 
             </div>
-</div>
+            
+        </div>
 
-      </div>
     )
-    }
-  
-  export default AddingBus;
+
+
+}
+
+export default withRouter(UpdateBus);

@@ -15,6 +15,7 @@ import Search from './components/Search';
 
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Menu from './components/menu.js';
 import Menubar from './components/menu2';
 import Footer from './components/footer';
@@ -51,10 +52,19 @@ import EditEmployeeDetails from "./components/Employees/EditEmployeeDetails";
 import EmployeeHome from "./components/Employees/EmployeeHome";
 import UploadImage from "./components/Employees/UploadImage";
 import HomeMain from './components/HomeMain';
+
 import Transportation from './components/Transportation';
 import Bus from './components/Bus';
-import AddingBus from './components/AddingBus.js';
-import updateBooking from './components/updatebooking';
+import Rout from './components/Rout';
+import Staff from './components/Staff';
+import AddingBus from './components/AddingBus';
+import AddingRoute from './components/AddingRoute'
+import AddingStaff from './components/AddingStaff'
+import UpdateBus from './components/UpdateBus'
+import UpdateRoute from './components/UpdateRoute'
+import UpdateStaff from './components/UpdateStaff'
+
+import updateBooking from './components/UpdateBooking';
 import BookingReport from './components/BookingReport';
 import fandQ from './components/HelpAndFAQ';
 
@@ -156,10 +166,15 @@ function App() {
             exact
             component={EditEmployeeDetails}
           />
+          {/* Transportation */}
+          <Transportation/>
 
-          <Route path="/transportation" exact component={Transportation}/>
-          <Route path="/viewbusses" exact component={Bus}/>
-          <Route path="/addnewbus" exact component={AddingBus}/>
+
+          
+          
+          
+
+
         </Switch>
       <Footer/>
     </div>

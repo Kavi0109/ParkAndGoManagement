@@ -9,6 +9,7 @@ const dotenv = require("dotenv");
 const app = express();
 require("dotenv").config();
 const routes = require("./routers");
+const { Console } = require("console");
 
 app.use(express.json())
 app.use(cors())
@@ -56,6 +57,14 @@ app.use("/booking",bookingRouter);
 
 app.use("/", routes);
 
+// Transportation
+const busRouter = require("./routes/buss.js");
+const routeRouter = require("./routes/routes.js");
+const stmRouter = require("./routes/staff-members.js");
+
+app.use("/bus", busRouter);
+app.use("/route", routeRouter);
+app.use("/staff", stmRouter);
 
 app.listen(PORT, () => {
     console.log('Server is up and running on port number: %d',PORT)
